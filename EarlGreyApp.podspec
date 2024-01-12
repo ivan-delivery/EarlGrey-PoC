@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name = "EarlGreyApp"
-  s.version = "2.2.2"
+  s.version = "2.2.37"
   s.summary = "iOS UI Automation Test Framework"
   s.homepage = "https://github.com/google/EarlGrey"
   s.author = "Google LLC."
@@ -15,8 +15,8 @@ Pod::Spec.new do |s|
                 ' Test Navigator so you can run tests directly from Xcode or the command line (using xcodebuild).'
   s.license = { :type => "Apache 2.0", :file => "LICENSE" }
 
-  s.source = { :http => "https://github.com/google/EarlGrey/releases/download/2.2.2/EarlGreyApp.zip" }
-  s.vendored_frameworks = "EarlGreyApp/AppFramework.framework"
+  s.source = { :http => "https://github.com/ivan-delivery/EarlGrey-PoC/releases/download/2.2.37/AppFramework.zip" }
+  s.vendored_frameworks = "AppFramework.xcframework"
 
   s.pod_target_xcconfig = { "FRAMEWORK_SEARCH_PATHS" =>"$(inherited) $(PLATFORM_DIR)/Developer/Library/Frameworks",
                             "ENABLE_BITCODE" => "NO" }
