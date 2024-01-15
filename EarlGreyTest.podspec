@@ -2,14 +2,14 @@
 Pod::Spec.new do |s|
 
   s.name = "EarlGreyTest"
-  s.version = "2.2.39"
+  s.version = "2.2.40"
   s.summary = "iOS UI Automation Test Framework"
   s.homepage = "https://github.com/google/EarlGrey"
   s.author = "Google LLC."
   s.summary = 'EarlGrey is a native iOS UI automation test framework that enables you to write clear, concise tests.'
   s.license = { :type => "Apache 2.0", :file => "LICENSE" }
 
-  s.source = { :git => "https://github.com/ivan-delivery/EarlGrey-PoC.git", :tag => "2.2.39" }
+  s.source = { :git => "https://github.com/ivan-delivery/EarlGrey-PoC.git", :tag => "#{s.version}" }
 
   s.dependency "eDistantObject", "1.0.2"
 
