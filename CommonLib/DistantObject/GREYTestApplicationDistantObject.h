@@ -19,7 +19,7 @@
 // Use modular imports for CocoaPods release.
 // #import <eDistantObject/EDOClientService.h>
 // End CocoaPods modular imports
-#if COCOAPODS
+#if FCOCOAPODS
 #import <eDistantObject/EDOClientService.h>
 #else
 #import "EDOClientService.h"

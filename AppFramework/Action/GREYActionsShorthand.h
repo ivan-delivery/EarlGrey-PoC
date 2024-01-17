@@ -19,7 +19,7 @@
 #import "GREYConstants.h"
 #import "GREYDefines.h"
 
-#if COCOAPODS
+#if FCOCOAPODS
 #import <eDistantObject/EDORemoteVariable.h>
 #else
 #import "EDORemoteVariable.h"
