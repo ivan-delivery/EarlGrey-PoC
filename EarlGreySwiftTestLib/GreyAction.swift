@@ -2,7 +2,7 @@
 
 import Foundation
 
-enum GreyAction {
+public enum GreyAction {
   case tap
   case swipe(direction: GREYDirection)
   case typeText(_ text: String)
@@ -13,7 +13,7 @@ enum GreyAction {
   case swipeFast(direction: GREYDirection)
   case custom(_ action: GREYAction)
 
-  var greyAction: GREYAction {
+  public var greyAction: GREYAction {
     switch self {
     case .tap:
       return grey_tap()

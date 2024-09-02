@@ -75,7 +75,7 @@ extension EarlGrey {
 }
 
 extension GREYInteraction {
-  func getTextOfDescendant() throws -> String {
+  public func getTextOfDescendant() throws -> String {
     var text: String = ""
     var error: NSError?
     let selector = NSSelectorFromString("text")
@@ -98,7 +98,7 @@ extension GREYInteraction {
     return text
   }
 
-  func getText() throws -> String {
+  public func getText() throws -> String {
     var text: String = ""
     var error: NSError?
     let selector = NSSelectorFromString("text")
@@ -119,7 +119,7 @@ extension GREYInteraction {
     return text
   }
 
-  func getScrollOffset() throws -> CGPoint {
+  public func getScrollOffset() throws -> CGPoint {
     var offset = CGPoint()
     var error: NSError?
     let selector = NSSelectorFromString("contentOffset")
@@ -146,7 +146,7 @@ extension GREYInteraction {
 
   // Before iOS 13 this function returns image of size {0, 0} due to XCUITest limitations.
   @available(iOS 13, *)
-  func getImage() throws -> UIImage? {
+  public func getImage() throws -> UIImage? {
     var image: UIImage?
     var error: NSError?
     let selector = NSSelectorFromString("image")
@@ -167,7 +167,7 @@ extension GREYInteraction {
     return image
   }
 
-  func getSnapshot() throws -> UIImage {
+  public func getSnapshot() throws -> UIImage {
     var image: UIImage?
     var error: NSError?
     let selector = NSSelectorFromString("snapshot")
@@ -188,7 +188,7 @@ extension GREYInteraction {
     return image!
   }
 
-  func getAccessibilityIdentifier() throws -> String {
+  public func getAccessibilityIdentifier() throws -> String {
     var accessibilityIdentifier: String?
     var error: NSError?
     let selector = NSSelectorFromString("accessibilityIdentifier")
@@ -209,7 +209,7 @@ extension GREYInteraction {
     return accessibilityIdentifier!
   }
 
-  func isOn() throws -> Bool? {
+  public func isOn() throws -> Bool? {
     var isOn: Bool?
     var error: NSError?
     let selector = NSSelectorFromString("isOn")
@@ -231,7 +231,7 @@ extension GREYInteraction {
     return isOn
   }
 
-  func isSelected() throws -> Bool? {
+  public func isSelected() throws -> Bool? {
     var isSelected: Bool?
     var error: NSError?
     let selector = NSSelectorFromString("isSelected")
@@ -253,7 +253,8 @@ extension GREYInteraction {
     return isSelected
   }
 
-  @discardableResult func assert(_ assertion: GreyAssertion, within timeout: TimeInterval = 0) throws -> Self {
+  @discardableResult 
+  public func assert(_ assertion: GreyAssertion, within timeout: TimeInterval = 0) throws -> Self {
     var error: NSError?
 
     if timeout.isZero {
@@ -272,7 +273,8 @@ extension GREYInteraction {
     return self
   }
 
-  @discardableResult func check(_ assertion: GreyAssertion, within timeout: TimeInterval = 0) -> Bool {
+  @discardableResult 
+  public func check(_ assertion: GreyAssertion, within timeout: TimeInterval = 0) -> Bool {
     var error: NSError?
 
     if timeout.isZero {
@@ -290,19 +292,22 @@ extension GREYInteraction {
     return error == nil
   }
 
-  @discardableResult func perform(_ action: GreyAction) throws -> Self {
+  @discardableResult 
+  public func perform(_ action: GreyAction) throws -> Self {
     var error: NSError?
     perform(action.greyAction, error: &error)
     try (error?.normalizedError).throwIfNotNil()
     return self
   }
 
-  @discardableResult func perform(_ action: GreyAction, withDelay delay: UInt32) throws -> Self {
+  @discardableResult 
+  public func perform(_ action: GreyAction, withDelay delay: UInt32) throws -> Self {
     sleep(delay)
     return try perform(action)
   }
 
-  @discardableResult func performRepeatelly(action: GreyAction, count: UInt, delay: TimeInterval) throws -> Self {
+  @discardableResult 
+  public func performRepeatelly(action: GreyAction, count: UInt, delay: TimeInterval) throws -> Self {
     if count == 1 {
       try perform(action)
     } else {
@@ -314,7 +319,8 @@ extension GREYInteraction {
     return self
   }
 
-  @discardableResult func usingScroll(
+  @discardableResult 
+  public func usingScroll(
     _ scroll: GreyScroll,
     in element: GreyElement
   ) -> Self {

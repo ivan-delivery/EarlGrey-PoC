@@ -2,7 +2,7 @@
 
 import Foundation
 
-indirect enum GreyAssertion {
+public indirect enum GreyAssertion {
   case isEnabled
   case isDisabled
   case isSelected
@@ -26,7 +26,7 @@ indirect enum GreyAssertion {
   case isNil
   case isNotNil
 
-  var greyMatcher: GREYMatcher {
+  public var greyMatcher: GREYMatcher {
     switch self {
     case .isEnabled:
       return grey_enabled()

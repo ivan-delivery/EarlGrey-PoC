@@ -2,12 +2,12 @@
 
 import Foundation
 
-enum GreyElementVisibility {
+public enum GreyElementVisibility {
   case minimal
   case sufficient
   case percentage(CGFloat)
 
-  var greyMatcher: GREYMatcher {
+  public var greyMatcher: GREYMatcher {
     switch self {
     case .minimal:
       return grey_minimumVisiblePercent(0.1)

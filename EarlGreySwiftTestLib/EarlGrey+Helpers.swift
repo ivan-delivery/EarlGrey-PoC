@@ -4,11 +4,11 @@ import Foundation
 
 extension EarlGrey {
   @discardableResult
-  static func on(_ matcher: GREYMatcher, file: StaticString = #file, line: UInt = #line) -> GREYInteraction {
+  public static func on(_ matcher: GREYMatcher, file: StaticString = #file, line: UInt = #line) -> GREYInteraction {
     on(matcher, grey_minimumVisiblePercent(0.1), file: file, line: line)
   }
 
-  static func on(_ matchers: GREYMatcher..., file: StaticString = #file, line: UInt = #line) -> GREYInteraction {
+  public static func on(_ matchers: GREYMatcher..., file: StaticString = #file, line: UInt = #line) -> GREYInteraction {
     return selectElement(
       with: grey_allOf(
         NSArray(array: matchers) as! [GREYMatcher]
@@ -18,7 +18,7 @@ extension EarlGrey {
     ).atIndex(0)
   }
 
-  static func on(
+  public static func on(
     _ matcher: GREYMatcher,
     of elementClass: AnyClass,
     file: StaticString = #file,
@@ -36,7 +36,7 @@ extension EarlGrey {
     ).atIndex(0)
   }
 
-  static func onCell(
+  public static func onCell(
     text: String,
     at index: Int = 0,
     file: StaticString = #file,
@@ -55,7 +55,7 @@ extension EarlGrey {
     ).atIndex(UInt(index))
   }
 
-  static func onCollectionCell(
+  public static func onCollectionCell(
     text: String,
     at index: Int = 0,
     file: StaticString = #file,
@@ -74,7 +74,7 @@ extension EarlGrey {
     ).atIndex(UInt(index))
   }
 
-  static func waitForEnabled(
+  public static func waitForEnabled(
     _ matcher: GREYMatcher,
     shouldFail: Bool = true,
     timeout: TimeInterval = 30,
@@ -93,7 +93,7 @@ extension EarlGrey {
     GREYAssertTrue(conditionFulfilled, reason)
   }
 
-  static func waitForVisible(
+  public static func waitForVisible(
     _ matcher: GREYMatcher,
     shouldFail: Bool = true,
     timeout: TimeInterval = 30,
@@ -112,7 +112,7 @@ extension EarlGrey {
     GREYAssertTrue(conditionFulfilled, reason)
   }
 
-  static func isVisible(
+  public static func isVisible(
     _ matcher: GREYMatcher,
     timeout: TimeInterval,
     file: StaticString = #file,
@@ -127,7 +127,7 @@ extension EarlGrey {
     return isVisible
   }
 
-  static func waitUntilHidden(
+  public static func waitUntilHidden(
     _ matcher: GREYMatcher,
     timeout: TimeInterval = 30,
     file: StaticString = #file,
@@ -146,7 +146,7 @@ extension EarlGrey {
   }
 }
 
-func grey_containsText(_ text: String) -> GREYMatcher {
+public func grey_containsText(_ text: String) -> GREYMatcher {
   let matcherBlock: GREYMatchesBlock = { element -> Bool in
     let element = element as AnyObject
     let selector = #selector(getter: UILabel.text)
@@ -183,7 +183,7 @@ public class GreyLabelContainer {
   var text = ""
 }
 
-func grey_getAccessibilityLabel(of elementMatcher: GREYMatcher, container: GreyLabelContainer) -> GREYMatcher {
+public func grey_getAccessibilityLabel(of elementMatcher: GREYMatcher, container: GreyLabelContainer) -> GREYMatcher {
   let matcherBlock: GREYMatchesBlock = { element -> Bool in
     let element = element as AnyObject
     let selector = #selector(UIView.accessibilityLabel)
@@ -205,7 +205,7 @@ func grey_getAccessibilityLabel(of elementMatcher: GREYMatcher, container: GreyL
   )
 }
 
-func grey_getText(of elementMatcher: GREYMatcher, container: GreyLabelContainer) -> GREYMatcher {
+public func grey_getText(of elementMatcher: GREYMatcher, container: GreyLabelContainer) -> GREYMatcher {
   let matcherBlock: GREYMatchesBlock = { element -> Bool in
     let element = element as AnyObject
     let selector = #selector(getter: UILabel.text)
@@ -241,7 +241,7 @@ func grey_getText(of elementMatcher: GREYMatcher, container: GreyLabelContainer)
   )
 }
 
-func grey_accessibilityID_prefix(_ prefix: String) -> GREYMatcher {
+public func grey_accessibilityID_prefix(_ prefix: String) -> GREYMatcher {
   let matches: GREYMatchesBlock = { (element: Any!) -> Bool in
     let object = element as AnyObject?
     return object?.accessibilityIdentifier?.starts(with: prefix) ?? false
@@ -257,7 +257,7 @@ func grey_accessibilityID_prefix(_ prefix: String) -> GREYMatcher {
   return GREYElementMatcherBlock(matchesBlock: matches, descriptionBlock: description)
 }
 
-func grey_getAccessibilityID(_ accessibilityId: String) -> GREYMatcher {
+public func grey_getAccessibilityID(_ accessibilityId: String) -> GREYMatcher {
   let matches: GREYMatchesBlock = { (element: Any!) -> Bool in
     let object = element as AnyObject?
     return object?.accessibilityIdentifier?.contains(accessibilityId) ?? false
@@ -273,14 +273,14 @@ func grey_getAccessibilityID(_ accessibilityId: String) -> GREYMatcher {
   return GREYElementMatcherBlock(matchesBlock: matches, descriptionBlock: description)
 }
 
-final class AccessibilityIDsCollection {
+public final class AccessibilityIDsCollection {
   fileprivate(set) var accessibilityIDs = [String]()
 }
 
 // EarlGrey is returning cells that are hidden
 // If I'm adding isVisible assertion to matchers - it freeze whole test
 // That's why I'm using this workaround withcheck if all parents are visible
-func grey_collectAccessibilityIDs(
+public func grey_collectAccessibilityIDs(
   for matcher: GREYMatcher,
   numberOfElements: Int,
   container: AccessibilityIDsCollection

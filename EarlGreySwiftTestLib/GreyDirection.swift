@@ -3,7 +3,7 @@
 import Foundation
 
 extension GREYDirection {
-  var toString: String {
+  public var toString: String {
     switch self {
     case .left:
       return "left"

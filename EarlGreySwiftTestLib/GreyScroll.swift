@@ -2,21 +2,21 @@
 
 import Foundation
 
-typealias GreyScrollOffset = CGFloat
+public typealias GreyScrollOffset = CGFloat
 
 extension GreyScrollOffset {
   static let contentEdge = CGFloat.greatestFiniteMagnitude
   static let defaultStepOffset = CGFloat(400)
 }
 
-enum GreyScroll {
+public enum GreyScroll {
   // swiftlint:disable:next identifier_name
   case up(stepOffset: GreyScrollOffset = .defaultStepOffset)
   case down(stepOffset: GreyScrollOffset = .defaultStepOffset)
   case left(stepOffset: GreyScrollOffset = .defaultStepOffset)
   case right(stepOffset: GreyScrollOffset = .defaultStepOffset)
 
-  var greyAction: GREYAction {
+  public var greyAction: GREYAction {
     switch self {
     case let .up(stepOffset):
       return stepOffset == .contentEdge ? grey_scrollToContentEdge(.top) : grey_scrollInDirection(.up, stepOffset)

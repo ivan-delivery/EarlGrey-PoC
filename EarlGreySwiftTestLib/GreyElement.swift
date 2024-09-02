@@ -2,26 +2,26 @@
 
 import Foundation
 
-protocol GreyElement {
-  var greyMatcher: GREYMatcher { get }
+public protocol GreyElement {
+  public var greyMatcher: GREYMatcher { get }
 }
 
 extension GreyElement {
-  var not: GreyElement {
+  public var not: GreyElement {
     GreyCustomElement(with: grey_not(greyMatcher))
   }
 
-  var ancestor: GreyElement {
+  public var ancestor: GreyElement {
     GreyCustomElement(with: grey_ancestor(greyMatcher))
   }
 
-  var descendant: GreyElement {
+  public var descendant: GreyElement {
     GreyCustomElement(with: grey_descendant(greyMatcher))
   }
 }
 
 extension String: GreyElement {
-  var greyMatcher: GREYMatcher { return grey_accessibilityID(self) }
+  public var greyMatcher: GREYMatcher { return grey_accessibilityID(self) }
 }
 
 struct GreyClassElement: GreyElement {
@@ -36,7 +36,7 @@ struct GreyClassElement: GreyElement {
   }
 }
 
-struct GreyCustomElement: GreyElement {
+public struct GreyCustomElement: GreyElement {
   let greyMatcher: GREYMatcher
 
   init(with matcher: GREYMatcher) {
@@ -44,7 +44,7 @@ struct GreyCustomElement: GreyElement {
   }
 }
 
-struct GreyCompoundElement: GreyElement {
+public struct GreyCompoundElement: GreyElement {
   let greyMatcher: GREYMatcher
 
   init(with elements: [GreyElement]) {
@@ -52,7 +52,7 @@ struct GreyCompoundElement: GreyElement {
   }
 }
 
-struct GreyAncestorElement: GreyElement {
+public struct GreyAncestorElement: GreyElement {
   let greyMatcher: GREYMatcher
 
   init(ancestor: GreyElement) {
@@ -60,7 +60,7 @@ struct GreyAncestorElement: GreyElement {
   }
 }
 
-struct GreyTableCellElement: GreyElement {
+public struct GreyTableCellElement: GreyElement {
   let greyMatcher: GREYMatcher
 
   init(withText text: String) {
@@ -104,7 +104,7 @@ struct GreyTableCellElement: GreyElement {
   }
 }
 
-struct GreyPrefixedElement: GreyElement {
+public struct GreyPrefixedElement: GreyElement {
   let greyMatcher: GREYMatcher
 
   init(_ prefix: String) {
@@ -112,7 +112,7 @@ struct GreyPrefixedElement: GreyElement {
   }
 }
 
-struct GreyAccessibilityLabel: GreyElement {
+public struct GreyAccessibilityLabel: GreyElement {
   let greyMatcher: GREYMatcher
 
   init(withText text: String) {
