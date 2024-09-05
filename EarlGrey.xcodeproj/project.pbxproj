@@ -428,6 +428,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		12F6ECED2C89E69600FB0AE6 /* EarlGrey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarlGrey.swift; sourceTree = "<group>"; };
+		12F6ECEE2C89E6C100FB0AE6 /* EarlGrey+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EarlGrey+Helpers.swift"; sourceTree = "<group>"; };
+		12F6ECF02C89E74B00FB0AE6 /* EarlGrey+Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EarlGrey+Swift.swift"; sourceTree = "<group>"; };
+		12F6ECF12C89E77200FB0AE6 /* GreyAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreyAction.swift; sourceTree = "<group>"; };
+		12F6ECF22C89E81700FB0AE6 /* GreyAssertion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreyAssertion.swift; sourceTree = "<group>"; };
+		12F6ECF32C89E83D00FB0AE6 /* GreyDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreyDirection.swift; sourceTree = "<group>"; };
+		12F6ECF42C89E86200FB0AE6 /* GreyElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreyElement.swift; sourceTree = "<group>"; };
+		12F6ECF52C89E88400FB0AE6 /* GreyElementVisibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreyElementVisibility.swift; sourceTree = "<group>"; };
+		12F6ECF62C89E8A000FB0AE6 /* GreyScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreyScroll.swift; sourceTree = "<group>"; };
 		278BF2AC24C53D780005ECE1 /* GREYAssert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GREYAssert.h; path = Assertion/GREYAssert.h; sourceTree = "<group>"; };
 		278BF2AD24C53D780005ECE1 /* GREYAssert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GREYAssert.m; path = Assertion/GREYAssert.m; sourceTree = "<group>"; };
 		278BF2AE24C53D780005ECE1 /* GREYAssertDefaultConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GREYAssertDefaultConfiguration.h; path = Assertion/GREYAssertDefaultConfiguration.h; sourceTree = "<group>"; };
@@ -792,6 +801,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12F6ECEC2C89E66700FB0AE6 /* EarlGreySwiftTestLib */ = {
+			isa = PBXGroup;
+			children = (
+				12F6ECED2C89E69600FB0AE6 /* EarlGrey.swift */,
+				12F6ECEE2C89E6C100FB0AE6 /* EarlGrey+Helpers.swift */,
+				12F6ECF02C89E74B00FB0AE6 /* EarlGrey+Swift.swift */,
+				12F6ECF12C89E77200FB0AE6 /* GreyAction.swift */,
+				12F6ECF22C89E81700FB0AE6 /* GreyAssertion.swift */,
+				12F6ECF32C89E83D00FB0AE6 /* GreyDirection.swift */,
+				12F6ECF42C89E86200FB0AE6 /* GreyElement.swift */,
+				12F6ECF52C89E88400FB0AE6 /* GreyElementVisibility.swift */,
+				12F6ECF62C89E8A000FB0AE6 /* GreyScroll.swift */,
+			);
+			path = EarlGreySwiftTestLib;
+			sourceTree = "<group>";
+		};
 		549DA71328E24A1A00A0AD84 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -967,6 +992,7 @@
 		FD62390820F569D500049E81 = {
 			isa = PBXGroup;
 			children = (
+				12F6ECEC2C89E66700FB0AE6 /* EarlGreySwiftTestLib */,
 				FD27E00A26FBB5AC0074018B /* third_party */,
 				FD6239E420F56E6A00049E81 /* eDistantObject.xcodeproj */,
 				FD62399020F56B7D00049E81 /* CommonLib */,
@@ -1723,6 +1749,7 @@
 				TargetAttributes = {
 					FD5048F720FB225100261CBE = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1510;
 						ProvisioningStyle = Automatic;
 					};
 					FD62395020F56A9700049E81 = {
@@ -1731,6 +1758,7 @@
 					};
 					FD623A4820F957BE00049E81 = {
 						CreatedOnToolsVersion = 9.4;
+						LastSwiftMigration = 1510;
 						ProvisioningStyle = Automatic;
 					};
 					FDF9E03420F82D090005DCF2 = {
@@ -2113,6 +2141,7 @@
 		FD5048FE20FB225100261CBE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
 				HEADER_SEARCH_PATHS = (
@@ -2129,6 +2158,9 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "EarlGreySwiftTestLib/TestLib-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "i386 x86_64 arm64 armv7 armv7s";
 			};
@@ -2137,6 +2169,7 @@
 		FD5048FF20FB225100261CBE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
 				HEADER_SEARCH_PATHS = (
@@ -2153,6 +2186,8 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "EarlGreySwiftTestLib/TestLib-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "i386 x86_64 arm64 armv7 armv7s";
 			};
@@ -2355,6 +2390,7 @@
 		FD623A4F20F957BE00049E81 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -2382,6 +2418,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.earlgrey.AppFramework;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "i386 x86_64 arm64 armv7 armv7s";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -2392,6 +2430,7 @@
 		FD623A5020F957BE00049E81 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -2419,6 +2458,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.earlgrey.AppFramework;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "i386 x86_64 arm64 armv7 armv7s";
 				VERSIONING_SYSTEM = "apple-generic";
