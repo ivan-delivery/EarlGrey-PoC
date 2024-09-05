@@ -2,7 +2,7 @@
 
 import Foundation
 
-enum GreyElementVisibility {
+public enum GreyElementVisibility {
   case minimal
   case sufficient
   case percentage(CGFloat)
