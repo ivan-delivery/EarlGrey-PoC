@@ -15,6 +15,8 @@
 //
 
 #import "GREYTouchInfo.h"
+#import <UIKit/UIKit.h>
+#import <objc/NSObject.h>
 
 // TODO: Consider to use XCUITest injections, and may move this back to app framework. // NOLINT
 @implementation GREYTouchInfo
@@ -25,32 +27,33 @@
   return [self initWithPoints:points
                          withTapCount:1
                                 phase:phase
-      deliveryTimeDeltaSinceLastTouch:timeDeltaSinceLastTouchSeconds];
+      deliveryTimeDeltaSinceLastTouch:timeDeltaSinceLastTouchSeconds
+                              element:nil];
 }
 
 - (instancetype)initWithPoints:(NSArray<NSValue *> *)points
-                       withTapCount:(NSUInteger)tapCount
                               phase:(UITouchPhase)phase
-    deliveryTimeDeltaSinceLastTouch:(NSTimeInterval)timeDeltaSinceLastTouchSeconds {
+    deliveryTimeDeltaSinceLastTouch:(NSTimeInterval)timeDeltaSinceLastTouchSeconds
+                            element:(id _Nullable)element {
   return [self initWithPoints:points
-                         withTapCount:tapCount
+                         withTapCount:1
                                 phase:phase
       deliveryTimeDeltaSinceLastTouch:timeDeltaSinceLastTouchSeconds
-                            responder:nil];
+                              element:element];
 }
 
 - (instancetype)initWithPoints:(NSArray<NSValue *> *)points
                        withTapCount:(NSUInteger)tapCount
                               phase:(UITouchPhase)phase
     deliveryTimeDeltaSinceLastTouch:(NSTimeInterval)timeDeltaSinceLastTouchSeconds
-                          responder:(UIResponder *)responder {
+                            element:(id _Nullable)element {
   self = [super init];
   if (self) {
     _points = points;
     _tapCount = tapCount;
     _phase = phase;
+    _element = element;
     _deliveryTimeDeltaSinceLastTouch = timeDeltaSinceLastTouchSeconds;
-    _responder = responder;
   }
   return self;
 }
@@ -61,6 +64,7 @@
   [desc appendFormat:@" with phase: %ld\n", (long)_phase];
   [desc appendFormat:@" with delivery delta time: %g\n", _deliveryTimeDeltaSinceLastTouch];
   [desc appendFormat:@" with points: %@\n", _points];
+  [desc appendFormat:@" with tap count: %lu\n", _tapCount];
   return desc;
 }
 

@@ -137,7 +137,8 @@
     [GREYSyntheticEvents touchAlongPath:touchPath
                        relativeToWindow:window
                             forDuration:_duration
-                                timeout:interactionTimeout];
+                                timeout:interactionTimeout
+                                element:element];
     return YES;
   } else {
     return NO;

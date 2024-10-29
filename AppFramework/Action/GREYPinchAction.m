@@ -114,7 +114,8 @@ static CGFloat const kPinchScale = (CGFloat)0.8;
     [GREYSyntheticEvents touchAlongMultiplePaths:touchPaths
                                 relativeToWindow:window
                                      forDuration:_duration
-                                         timeout:interactionTimeout];
+                                         timeout:interactionTimeout
+                                         element:element];
   }
 
   return touchPaths != nil;

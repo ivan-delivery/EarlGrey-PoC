@@ -48,6 +48,28 @@ NS_ASSUME_NONNULL_BEGIN
                timeout:(NSTimeInterval)timeout;
 
 /**
+ * Touch along a specified path in a @c CGPoint array.
+ * This method blocks until all touches are delivered.
+ *
+ * @param touchPath An array of @c CGPoints. The first point in @c touchPath is the point where
+                    touch begins, and the last point in @c touchPath is the final touch point
+                    where touch ends. Points in @c touchPath must be in @c window coordinates.
+ * @param window    The UIWindow that contains the points in the @c touchPath where
+ *                  the touches are performed. Interaction will begin on the view inside
+ *                  @c window which passes the hit-test for the first point in @c touchPath.
+ * @param duration  The time interval over which to space the touches evenly. If 0, all
+ *                  touches will be sent one after the other without any delay in-between them.
+ * @param timeout   The length of time that the method should wait for the interaction to complete.
+ * @param element   "The touched element used to find " the overriding UIResponder that will receive
+ *                  the touch event if any for swiftUI iOS 18+. Optional.
+ */
++ (void)touchAlongPath:(NSArray *)touchPath
+      relativeToWindow:(UIWindow *)window
+           forDuration:(NSTimeInterval)duration
+               timeout:(NSTimeInterval)timeout
+               element:(id _Nullable)element;
+
+/**
  * Injects a multi touch sequence specified by the array of @c touchPaths in the specified @c
  * duration.
  * Note that a single touch path is an array of CGPoint structs identifying the path taken by it
@@ -70,6 +92,31 @@ NS_ASSUME_NONNULL_BEGIN
                         timeout:(NSTimeInterval)timeout;
 
 /**
+ * Injects a multi touch sequence specified by the array of @c touchPaths in the specified @c
+ * duration.
+ * Note that a single touch path is an array of CGPoint structs identifying the path taken by it
+ * relative to the specified @c window.
+ *
+ * @param touchPaths An array of @c touchpaths each of which are array of @c CGPoints.
+ *                   The first point in @c touchPath is the point where touch begins, and the last
+ *                   point in @c touchPath is the final touch point where touch ends. Points in @c
+ *                   touchPath Points in @c touchPath must be in @c window coordinates.
+ * @param window     The UIWindow that contains the points in the @c touchPath where
+ *                   the touches are performed. Interaction will begin on the view inside
+ *                   @c window which passes the hit-test for the first point in @c touchPath.
+ * @param duration   The time interval over which to space the touches evenly. If 0, all
+ *                   touches will be sent one after the other without any delay in-between them.
+ * @param timeout    The length of time that the method should wait for the interaction to complete.
+ * @param element    "The touched element used to find " the overriding UIResponder that will
+ *                   receive the touch event if any for swiftUI iOS 18+. Optional.
+ */
++ (void)touchAlongMultiplePaths:(NSArray *)touchPaths
+               relativeToWindow:(UIWindow *)window
+                    forDuration:(NSTimeInterval)duration
+                        timeout:(NSTimeInterval)timeout
+                        element:(id _Nullable)element;
+
+/**
  * Shakes the device.
  */
 + (void)shakeDevice;
@@ -90,8 +137,26 @@ NS_ASSUME_NONNULL_BEGIN
                   timeout:(NSTimeInterval)timeout;
 
 /**
+ * Begins interaction with a new touch starting at a specified point within a specified
+ * window's coordinates.
+ *
+ * @param point     The point where the touch is to start.
+ * @param window    The window that contains the coordinates of the touch points.
+ * @param immediate If @c YES, this method blocks until touch is delivered, otherwise the touch is
+ *                  enqueued for delivery the next time runloop drains.
+ * @param timeout   The length of time that the method should wait for the interaction to complete.
+ * @param element   "The touched element used to find " the overriding UIResponder that will receive
+ *                  the touch event if any for swiftUI iOS 18+. Optional.
+ */
+- (void)beginTouchAtPoint:(CGPoint)point
+         relativeToWindow:(UIWindow *)window
+        immediateDelivery:(BOOL)immediate
+                  timeout:(NSTimeInterval)timeout
+                  element:(id _Nullable)element;
+
+/**
  * Continues the current interaction by moving touch to a new point. Providing the same point
- * in consecutive calls is intepreted as stationary touches. While delivering these touch points,
+ * in consecutive calls is interpreted as stationary touches. While delivering these touch points,
  * they may be buffered and during delivery if there are multiple stale touch points that
  * are time sensitive some of them may be dropped.
  *
@@ -105,6 +170,24 @@ NS_ASSUME_NONNULL_BEGIN
                      timeout:(NSTimeInterval)timeout;
 
 /**
+ * Continues the current interaction by moving touch to a new point. Providing the same point
+ * in consecutive calls is interpreted as stationary touches. While delivering these touch points,
+ * they may be buffered and during delivery if there are multiple stale touch points that
+ * are time sensitive some of them may be dropped.
+ *
+ * @param point     The point to move the touch to.
+ * @param immediate If @c YES, this method blocks until touch is delivered, otherwise the touch is
+ *                  enqueued for delivery the next time runloop drains.
+ * @param timeout   The length of time that the method should wait for the interaction to complete.
+ * @param element   "The touched element used to find " the overriding UIResponder that will receive
+ *                  the touch event if any for swiftUI iOS 18+. Optional.
+ */
+- (void)continueTouchAtPoint:(CGPoint)point
+           immediateDelivery:(BOOL)immediate
+                     timeout:(NSTimeInterval)timeout
+                     element:(id _Nullable)element;
+
+/**
  * Ends interaction started by GREYSyntheticEvents::beginTouchAtPoint:relativeToWindow.
  * This method will block until all the touches since the beginning of the interaction have been
  * delivered.
@@ -112,6 +195,17 @@ NS_ASSUME_NONNULL_BEGIN
  * @param timeout The length of time that the method should wait for the interaction to complete.
  */
 - (void)endTouchWithTimeout:(NSTimeInterval)timeout;
+
+/**
+ * Ends interaction started by GREYSyntheticEvents::beginTouchAtPoint:relativeToWindow.
+ * This method will block until all the touches since the beginning of the interaction have been
+ * delivered.
+ *
+ * @param timeout The length of time that the method should wait for the interaction to complete.
+ * @param element "The touched element used to find " the overriding UIResponder that will receive
+ *                the touch event if any for swiftUI iOS 18+. Optional.
+ */
+- (void)endTouchWithTimeout:(NSTimeInterval)timeout element:(id _Nullable)element;
 
 @end
 
@@ -126,9 +220,10 @@ NS_ASSUME_NONNULL_BEGIN
  *                 time. It corresponding to the UITouch's tapCount and gesture recognizers use
  *                 it to detect single-tapped, double-tapped, and multi-tapped.
  * @param timeout  The length of time that the method should wait for the interaction to complete.
- * @param responder The override UIResponder that will receive the touch event if any. Optional.
+ * @param element  "The touched element used to find " the overriding UIResponder that will receive
+ *                 the touch event if any for swiftUI iOS 18+. Optional.
  */
 void GREYPerformMultipleTap(CGPoint location, UIWindow *window, NSUInteger tapCount,
-                            NSTimeInterval timeout, UIResponder *_Nullable responder);
+                            NSTimeInterval timeout, id element);
 
 NS_ASSUME_NONNULL_END

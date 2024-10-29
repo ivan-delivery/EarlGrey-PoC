@@ -84,10 +84,9 @@
   }
 
   CFTimeInterval interactionTimeout = GREY_CONFIG_DOUBLE(kGREYConfigKeyInteractionTimeoutDuration);
-  UIResponder *responder = [self grey_gestureContainer:element atLocation:location];
   for (NSUInteger i = 1; i <= numberOfTaps; i++) {
     @autoreleasepool {
-      GREYPerformMultipleTap(location, window, i, interactionTimeout, responder);
+      GREYPerformMultipleTap(location, window, i, interactionTimeout, element);
     }
   }
   return YES;
@@ -118,50 +117,12 @@
   [GREYSyntheticEvents touchAlongPath:touchPath
                      relativeToWindow:window
                           forDuration:duration
-                              timeout:interactionTimeout];
+                              timeout:interactionTimeout
+                              element:element];
   return YES;
 }
 
 #pragma mark - Private
-
-/**
- * Returns the SwiftUI specific @c UIResponder for @c element.
- *
- * For iOS 18+ Swift UI, the responder needs to be set to the UITouch event that's not always
- * the view. Using private _hitTestWithContext: method to retrieve the responder.
- *
- * See b/347429266 for more details.
- * @param element The element to retrieve the responder for.
- * @param location The location of the tap.
- *
- * @return The @c UIResponder&GestureRecognizerContainer for a given @c element at @c location.
- */
-+ (UIResponder *)grey_gestureContainer:(id)element atLocation:(CGPoint)location {
-  UIResponder *responder;
-#if defined(__IPHONE_18_0) && __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_18_0
-  static NSString *const kSwiftUIAccessiblityNodeClassName = @"SwiftUI.AccessibilityNode";
-  if (![element isKindOfClass:NSClassFromString(kSwiftUIAccessiblityNodeClassName)]) {
-    return nil;
-  }
-  if (![element respondsToSelector:@selector(accessibilityContainer)]) {
-    return nil;
-  }
-  id container = [element accessibilityContainer];
-  // _UIHitTestContext is a private class for an object used in UIResponder's
-  // method that can retreive the UIResponder for a given point:
-  // `_hitTestWithContext:` returning @c UIResponder&UIGestureRecognizerContainer.
-  id context = [NSClassFromString(@"_UIHitTestContext") contextWithPoint:location radius:1.0];
-  // We need to walk up the accessibility container chain until we find the one that
-  // can retrieve the responder.
-  while (!responder && container) {
-    if ([container respondsToSelector:NSSelectorFromString(@"_hitTestWithContext:")]) {
-      responder = [container _hitTestWithContext:context];
-    }
-    container = [container accessibilityContainer];
-  }
-#endif
-  return responder;
-}
 
 /**
  * @return A tappable point that has the given @c location relative to the window of the
