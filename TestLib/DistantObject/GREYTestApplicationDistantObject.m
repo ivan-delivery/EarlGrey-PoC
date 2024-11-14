@@ -79,7 +79,7 @@ static NSString *GetErrorRecoverySuggestion(void) {
   NSString *recoverySuggestion =
       @"Unless your tests explicitly relaunch the app, it won't be restarted. Any requests from "
       @"the test to the app side will fail. Use "
-      @"GREYTestApplicationDistantObject.hostApplicationRelaunchHandler to register a callback "
+      @"-[EarlGrey setHostApplicationCrashHandler:] to register a callback "
       @"that will be invoked when your app crashes. In this callback you can clean up your "
       @"test-side remote objects and relaunch your app.";
   NSString *troubleShootInfo =
