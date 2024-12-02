@@ -23,6 +23,7 @@
 #import "GREYAppStateTrackerObject.h"
 #import "GREYFatalAsserts.h"
 #import "GREYAppState.h"
+#import "GREYAppleInternals.h"
 #import "GREYDefines.h"
 #import "GREYLogger.h"
 #import "GREYSwizzler.h"
@@ -40,13 +41,13 @@ static NSSet<Class> *gDisabledGestureRecognizers;
   // _setDirty is not available in iOS 18+ UIKit.
   if (!iOS18_OR_ABOVE()) {
     swizzled = [swizzler swizzleClass:self
-                replaceInstanceMethod:NSSelectorFromString(@"_setDirty")
+                replaceInstanceMethod:@selector(_setDirty)
                            withMethod:@selector(greyswizzled_setDirty)];
     GREYFatalAssertWithMessage(swizzled, @"Failed to swizzle UIGestureRecognizer _setDirty");
   }
 
   swizzled = [swizzler swizzleClass:self
-              replaceInstanceMethod:NSSelectorFromString(@"_resetGestureRecognizer")
+              replaceInstanceMethod:@selector(_resetGestureRecognizer)
                          withMethod:@selector(greyswizzled_resetGestureRecognizer)];
   GREYFatalAssertWithMessage(swizzled,
                              @"Failed to swizzle UIGestureRecognizer _resetGestureRecognizer");

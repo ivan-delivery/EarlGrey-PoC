@@ -20,14 +20,8 @@
 #import "GREYAppStateTracker.h"
 #import "GREYFatalAsserts.h"
 #import "GREYAppState.h"
+#import "GREYAppleInternals.h"
 #import "GREYSwizzler.h"
-
-@interface UIPresentationController (Private)
-
-- (int)transitionDidFinish:(int)arg2;
-- (int)runTransitionForCurrentStateAnimated:(int)arg2 handoffData:(id)arg3;
-
-@end
 
 @implementation UIPresentationController (GREYApp)
 
