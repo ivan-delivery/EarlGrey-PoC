@@ -31,16 +31,6 @@
 @property(readonly, copy, nonnull) NSString *bundleID;
 
 /**
- * Returns a proxy for an application associated with the specified bundle identifier.
- *
- * @note Expose this signature in the older Xcode versions.
- * @param bundleID Bundle ID of application.
- *
- * @return Reference to application.
- */
-- (nullable instancetype)initWithBundleIdentifier:(nonnull NSString *)bundleID;
-
-/**
  * Obtain a reference to an application on the device under test.
  *
  * @param path Path to application. Optional.
