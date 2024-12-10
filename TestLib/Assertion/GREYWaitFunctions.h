@@ -66,4 +66,4 @@ GREY_EXTERN BOOL GREYWaitForAppToIdleWithTimeoutAndError(
  * @param time A CFTimeInterval in seconds for which the test process will
  * sleep.
  */
-GREY_EXTERN void GREYWaitForTime(CFTimeInterval time);
+GREY_EXTERN void GREYWaitForTime(CFTimeInterval time) NS_SWIFT_DISABLE_ASYNC;

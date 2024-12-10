@@ -65,7 +65,8 @@
  *
  * @return @c YES if the condition was met before the timeout, @c NO otherwise.
  */
-- (BOOL)waitWithTimeout:(CFTimeInterval)seconds __attribute__((warn_unused_result));
+- (BOOL)waitWithTimeout:(CFTimeInterval)seconds
+    __attribute__((warn_unused_result)) NS_SWIFT_DISABLE_ASYNC;
 
 /**
  * Waits for the condition to be met until the specified @c seconds have elapsed. Will poll the
@@ -80,8 +81,8 @@
  * @return @c YES if the condition was met before the timeout, @c NO otherwise.
  */
 - (BOOL)waitWithTimeout:(CFTimeInterval)seconds
-           pollInterval:(CFTimeInterval)interval __attribute__((warn_unused_result));
-
+           pollInterval:(CFTimeInterval)interval
+    __attribute__((warn_unused_result)) NS_SWIFT_DISABLE_ASYNC;
 /**
  * @return Name of the condition.
  */
