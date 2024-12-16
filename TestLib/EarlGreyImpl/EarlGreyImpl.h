@@ -359,6 +359,15 @@ typedef void (^GREYHostApplicationCrashHandler)(void);
                                  error:(NSError **)error API_AVAILABLE(ios(17));
 
 /**
+ * Taps on an element (of any type) within an activity sheet.
+ *
+ * @param      identifier The identifier to specify the element in the activity sheet.
+ * @param[out] error      An NSError populated with any steps that show more information about a
+ *                        negative result.
+ */
+- (void)tapElementInActivitySheetWithID:(NSString *)identifier error:(NSError **)error;
+
+/**
  * @return A BOOL specifying if an activity sheet was closed by tapping on the sheet's close button.
  *
  * @param[out] error      An NSError populated with any steps that show more information about a
