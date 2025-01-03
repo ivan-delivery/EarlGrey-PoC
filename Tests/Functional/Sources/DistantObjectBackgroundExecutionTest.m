@@ -57,14 +57,18 @@
 
 /** Verifies test case execution will not block the remote call from app-under-test. */
 - (void)testCallbackIsNotBlockedByTestExecution {
+  XCTestExpectation *expectation = [self expectationWithDescription:@"Test Expectation"];
+  expectation.expectedFulfillmentCount = 10;
   __block NSUInteger count = 0;
   id block = ^{
     count++;
+    [expectation fulfill];
   };
-  for (NSUInteger index = 0; index < 10; ++index) {
+  for (NSUInteger index = 0; index < expectation.expectedFulfillmentCount; ++index) {
     [GREYHostApplicationDistantObject.sharedInstance invokeRemoteBlock:block withDelay:0];
   }
   XCTAssertGreaterThan(count, 0);
+  [self waitForExpectations:@[ expectation ] timeout:10];
 }
 
 /** Verifies dispatch policy cannot be overridden after app-under-test launch. */
