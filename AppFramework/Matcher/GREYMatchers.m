@@ -90,11 +90,7 @@ static NSString *const kActivitySheetContainerClass = @"_UISceneLayerHostContain
 + (id<GREYMatcher>)matcherForKeyWindow {
   NSString *prefix = @"keyWindow";
   GREYMatchesBlock matches = ^BOOL(UIWindow *element) {
-    UIWindow *keyWindow = [GREYUIWindowProvider keyWindowForSharedApplication];
-    if (element == keyWindow) {
-      return YES;
-    }
-    return [element isEqual:keyWindow];
+    return element.keyWindow;
   };
   GREYDescribeToBlock describe = ^void(id<GREYDescription> description) {
     [description appendText:prefix];

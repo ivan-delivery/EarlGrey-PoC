@@ -14,7 +14,6 @@
 // limitations under the License.
 //
 
-
 #import "GREYAction.h"
 #import "GREYActionsShorthand.h"
 #import "GREYInteraction.h"
@@ -129,7 +128,8 @@ typedef void (^GREYHostApplicationCrashHandler)(void);
  *
  * @return A GREYElementInteraction instance, initialized with an appropriate matcher.
  */
-- (id<GREYInteraction>)selectElementWithMatcher:(id<GREYMatcher>)elementMatcher;
+- (id<GREYInteraction>)selectElementWithMatcher:(id<GREYMatcher>)elementMatcher
+    NS_WARN_UNUSED_RESULT;
 
 /**
  * Dismisses the keyboard programmatically by calling resignFirstResponder on application under
@@ -357,6 +357,15 @@ typedef void (^GREYHostApplicationCrashHandler)(void);
  */
 - (BOOL)tapButtonInActivitySheetWithId:(NSString *)identifier
                                  error:(NSError **)error API_AVAILABLE(ios(17));
+
+/**
+ * Taps on an element (of any type) within an activity sheet.
+ *
+ * @param      identifier The identifier to specify the element in the activity sheet.
+ * @param[out] error      An NSError populated with any steps that show more information about a
+ *                        negative result.
+ */
+- (void)tapElementInActivitySheetWithID:(NSString *)identifier error:(NSError **)error;
 
 /**
  * @return A BOOL specifying if an activity sheet was closed by tapping on the sheet's close button.

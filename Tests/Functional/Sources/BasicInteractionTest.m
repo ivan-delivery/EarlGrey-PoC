@@ -20,6 +20,9 @@
 #import "GREYHostBackgroundDistantObject+BasicInteractionTest.h"
 #import "BaseIntegrationTest.h"
 
+// Extended long press duration to reduce test flakiness due to slow simulator speeds.
+static const CFTimeInterval kExtendedLongPressDuration = 4.0;
+
 /**
  * Tests to ensure the basic functionality of EarlGrey is intact.
  */
@@ -130,7 +133,7 @@
   [self openTestViewNamed:@"Zooming Scroll View"];
   [[EarlGrey selectElementWithMatcher:grey_accessibilityID(@"ZoomingScrollView")]
       performAction:GREYPinchSlowInDirectionAndAngle(kGREYPinchDirectionOutward,
-                                                      kGREYPinchAngleDefault)];
+                                                     kGREYPinchAngleDefault)];
   [[EarlGrey selectElementWithMatcher:grey_accessibilityID(@"ZoomingScrollView")]
       performAction:GREYTap()];
   [[EarlGrey selectElementWithMatcher:GREYButtonTitle(@"EarlGrey TestApp")]
@@ -144,7 +147,7 @@
   [self openTestViewNamed:@"Zooming Scroll View"];
   [[EarlGrey selectElementWithMatcher:grey_accessibilityID(@"ZoomingScrollView")]
       performAction:GREYPinchSlowInDirectionAndAngle(kGREYPinchDirectionInward,
-                                                      kGREYPinchAngleDefault)];
+                                                     kGREYPinchAngleDefault)];
   [[EarlGrey selectElementWithMatcher:grey_accessibilityID(@"ZoomingScrollView")]
       performAction:GREYTap()];
   [[EarlGrey selectElementWithMatcher:GREYButtonTitle(@"EarlGrey TestApp")]
@@ -214,21 +217,21 @@
 - (void)testErrorHandling {
   NSError *error;
   [[EarlGrey selectElementWithMatcher:GREYText(@"GarbageValue")] performAction:GREYTap()
-                                                                          error:&error];
+                                                                         error:&error];
   XCTAssertEqualObjects(error.domain, kGREYInteractionErrorDomain,
                         @"Interaction Error not thrown for tapping on an invalid element.");
   error = nil;
   [[EarlGrey selectElementWithMatcher:GREYText(@"GarbageValue")] assertWithMatcher:GREYNotNil()
-                                                                              error:&error];
+                                                                             error:&error];
   XCTAssertEqualObjects(error.domain, kGREYInteractionErrorDomain,
                         @"Interaction Error not thrown for not-nil assert on an invalid element.");
   error = nil;
   [[EarlGrey selectElementWithMatcher:GREYText(@"Basic Views")] performAction:GREYTap()
-                                                                         error:&error];
+                                                                        error:&error];
   XCTAssertNil(error, @"Error not nil for tapping on a valid element");
   error = nil;
   [[EarlGrey selectElementWithMatcher:GREYText(@"Tab 2")] assertWithMatcher:GREYNotNil()
-                                                                       error:&error];
+                                                                      error:&error];
   XCTAssertNil(error, @"Error not nil for asserting not-nil on a valid element");
 }
 
@@ -240,8 +243,7 @@
   [[EarlGrey selectElementWithMatcher:GREYText(@"Tab 2")] performAction:GREYTap()];
   [[EarlGrey selectElementWithMatcher:grey_accessibilityID(@"foo")]
       performAction:GREYTypeText(@"hi")];
-  [[EarlGrey selectElementWithMatcher:GREYText(@"hi")]
-      assertWithMatcher:GREYSufficientlyVisible()];
+  [[EarlGrey selectElementWithMatcher:GREYText(@"hi")] assertWithMatcher:GREYSufficientlyVisible()];
   [[EarlGrey selectElementWithMatcher:GREYButtonTitle(@"EarlGrey TestApp")]
       performAction:GREYTap()];
 }
@@ -435,7 +437,7 @@
                                                  nil)] performAction:GREYTap()];
   NSError *error;
   [[EarlGrey selectElementWithMatcher:GREYText(@"Basic Views")] assertWithMatcher:GREYNotNil()
-                                                                             error:&error];
+                                                                            error:&error];
   XCTAssertEqual(error.code, kGREYInteractionElementNotFoundErrorCode,
                  @"No table view cell from the main Table can be visible.");
 }
@@ -467,7 +469,7 @@
   [[EarlGrey selectElementWithMatcher:GREYText(@"Basic Views")] performAction:GREYTap()];
   NSError *error;
   [[EarlGrey selectElementWithMatcher:GREYButtonTitle(@"Disabled")] performAction:GREYTap()
-                                                                             error:&error];
+                                                                            error:&error];
   XCTAssertNil(error);
 }
 
@@ -678,7 +680,8 @@
         performAction:GREYTapAtPoint(CGPointMake(1, 1))];
   }
   [[EarlGrey selectElementWithMatcher:grey_accessibilityID(@"foo")]
-      performAction:GREYLongPressAtPointWithDuration(CGPointMake(1, 1), 1.0f)];
+      performAction:GREYLongPressAtPointWithDuration(CGPointMake(1, 1),
+                                                     kExtendedLongPressDuration)];
 
   [[EarlGrey selectElementWithMatcher:GREYText(@"Select")] performAction:GREYTap()];
 
@@ -687,6 +690,11 @@
   [[EarlGrey selectElementWithMatcher:grey_accessibilityID(@"foo")]
       performAction:GREYTypeText(@"FromEarlGrey")];
 
+  // On slow simulators, tapping "Paste" sometimes fail (2-3 times out of 200 runs), resulting in
+  // flaky tests. Waiting for the app to idle reduces the flakiness, which may presumably be caused
+  // by the text-typing above.
+  GREYWaitForAppToIdle(@"Waiting for the App to Idle");
+
   // For iOS 14, on doing a long press, the caret goes into a selection mode. To bring up the menu
   // a tap is required at the point of selection.
   if (iOS14_OR_ABOVE()) {
@@ -694,7 +702,8 @@
         performAction:GREYTapAtPoint(CGPointMake(1, 1))];
   }
   [[EarlGrey selectElementWithMatcher:grey_accessibilityID(@"foo")]
-      performAction:GREYLongPressAtPointWithDuration(CGPointMake(1, 1), 1.0f)];
+      performAction:GREYLongPressAtPointWithDuration(CGPointMake(1, 1),
+                                                     kExtendedLongPressDuration)];
 
   [[EarlGrey selectElementWithMatcher:GREYText(@"Paste")] performAction:GREYTap()];
 
@@ -880,14 +889,15 @@
 - (void)testInteractionWithContextMenu {
   if (@available(iOS 13.0, *)) {
     [self openTestViewNamed:@"Basic Views"];
+
     [[EarlGrey selectElementWithMatcher:GREYAccessibilityLabel(@"ContextMenuButton")]
-        performAction:GREYLongPress()];
+        performAction:GREYLongPressWithDuration(kExtendedLongPressDuration)];
     XCTAssertTrue([self waitForVisibilityForText:@"Top-level Action"]);
     [[EarlGrey selectElementWithMatcher:GREYText(@"Top-level Action")] performAction:GREYTap()];
     XCTAssertTrue([self waitForVisibilityForText:@"Top-level Action Tapped"]);
 
     [[EarlGrey selectElementWithMatcher:GREYAccessibilityLabel(@"ContextMenuButton")]
-        performAction:GREYLongPress()];
+        performAction:GREYLongPressWithDuration(kExtendedLongPressDuration)];
     XCTAssertTrue([self waitForVisibilityForText:@"Child Actions"]);
     [[EarlGrey selectElementWithMatcher:GREYText(@"Child Actions")] performAction:GREYTap()];
     XCTAssertTrue([self waitForVisibilityForText:@"Child Action 0"]);
@@ -895,7 +905,7 @@
     XCTAssertTrue([self waitForVisibilityForText:@"Child Action 0 Tapped"]);
 
     [[EarlGrey selectElementWithMatcher:GREYAccessibilityLabel(@"ContextMenuButton")]
-        performAction:GREYLongPress()];
+        performAction:GREYLongPressWithDuration(kExtendedLongPressDuration)];
     XCTAssertTrue([self waitForVisibilityForText:@"Child Actions"]);
     [[EarlGrey selectElementWithMatcher:GREYText(@"Child Actions")] performAction:GREYTap()];
     XCTAssertTrue([self waitForVisibilityForText:@"Child Action 1"]);
@@ -925,7 +935,7 @@
   [EarlGrey setRootMatcherForSubsequentInteractions:grey_accessibilityID(@"Main Window")];
   [[EarlGrey selectElementWithMatcher:GREYText(@"Tab 2")] performAction:GREYTap()];
   [[EarlGrey selectElementWithMatcher:GREYAccessibilityLabel(@"u")] performAction:GREYTap()
-                                                                             error:&error];
+                                                                            error:&error];
   XCTAssertNotNil(error, @"Keyboard key should not be present in the main window");
 
   [EarlGrey setRootMatcherForSubsequentInteractions:nil];
@@ -964,6 +974,19 @@
   }
 }
 
+- (void)testShareSheetButtonsPresent {
+  XCTSkipUnless(iOS17_OR_ABOVE());
+  if (@available(iOS 17.0, *)) {
+    [self openTestViewNamed:@"Share Sheet"];
+    XCTAssertTrue([EarlGrey buttonPresentInActivitySheetWithId:@"Copy" error:nil]);
+
+    NSError *error;
+    [EarlGrey buttonPresentInActivitySheetWithId:@"Missing button" error:&error];
+    XCTAssertNotNil(error, @"Error is nil.");
+    [EarlGrey closeActivitySheetWithError:nil];
+  }
+}
+
 - (void)testTappingOnShareSheetButtons {
   XCTSkipUnless(iOS17_OR_ABOVE());
   if (@available(iOS 17.0, *)) {
@@ -972,7 +995,10 @@
 
     [self openTestViewNamed:@"Share Sheet"];
     XCTAssertTrue([EarlGrey tapButtonInActivitySheetWithId:@"More" error:nil]);
-    XCTAssertTrue([EarlGrey tapButtonInActivitySheetWithId:@"Messages" error:nil]);
+
+    [EarlGrey tapElementInActivitySheetWithID:@"Done" error:nil];
+
+    XCTAssertTrue([EarlGrey closeActivitySheetWithError:nil]);
   }
 }
 

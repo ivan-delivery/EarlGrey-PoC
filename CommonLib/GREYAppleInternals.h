@@ -30,6 +30,16 @@
 - (void)viewDidMoveToWindow:(id)window shouldAppearOrDisappear:(BOOL)arg;
 @end
 
+@interface UIPresentationController (GREYExposed)
+- (int)runTransitionForCurrentStateAnimated:(int)arg2 handoffData:(id)arg3;
+- (int)transitionDidFinish:(int)arg2;
+@end
+
+@interface UIGestureRecognizer (GREYExposed)
+- (void)_setDirty;
+- (void)_resetGestureRecognizer;
+@end
+
 /**
  * A private class that represents motion related events. This is sent to UIApplication whenever a
  * motion occurs.

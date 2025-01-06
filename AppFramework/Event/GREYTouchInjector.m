@@ -39,6 +39,24 @@ static const NSTimeInterval kTouchInjectFramerateInv = 1 / 120.0;
 static const NSTimeInterval kDelayAfterLastTouchEvent = kTouchInjectFramerateInv;
 
 /**
+ * Protocol for accessing _HitTestContext's private contextWithPoint:radius: method.
+ * Required to access the UIResponder that should be used for touch injection for SwiftUI elements
+ * in iOS 18+.
+ */
+@protocol _PrivateHitTestContext
++ (id)contextWithPoint:(struct CGPoint)arg1 radius:(double)arg2;
+@end
+
+/**
+ * Protocol for accessing the UIResponder's private hitTest method.
+ * Required to access the UIResponder that should be used for touch injection for SwiftUI elements
+ * in iOS 18+.
+ */
+@protocol _PrivateUIResponder
+- (id)_hitTestWithContext:(id)arg1;
+@end
+
+/**
  * The minimal delay between any two touch events.
  *
  * Depends on weather the `fast_tap_events` environment variable exists, it could be zero or
@@ -132,7 +150,7 @@ static NSTimeInterval AdjustedDeliveryTimeDelta(GREYTouchInfo *touchInfo) {
   __weak __block void (^weakTouchProcessBlock)(void);
   void (^touchProcessBlock)(void) = ^{
     void (^strongTouchProcessBlock)(void) = weakTouchProcessBlock;
-    // If the parent method times out and returns, it will effectively kill this block execution
+    // If the parent method times out and returns, it will effectively stop this block execution
     // by releasing the strong reference.
     if (!strongTouchProcessBlock) {
       return;
@@ -197,6 +215,46 @@ static NSTimeInterval AdjustedDeliveryTimeDelta(GREYTouchInfo *touchInfo) {
 #pragma mark - Private Injecting touches API's
 
 /**
+ * Returns the SwiftUI specific @c UIResponder for @c element.
+ *
+ * For iOS 18+ Swift UI, the responder needs to be set to the UITouch event that's not always
+ * the view. Using private _hitTestWithContext: method to retrieve the responder.
+ *
+ * See b/347429266 for more details.
+ * @param element The element to retrieve the responder for.
+ * @param location The location of the tap.
+ *
+ * @return The @c UIResponder&GestureRecognizerContainer for a given @c element at @c location.
+ */
++ (id)grey_gestureContainerWithElement:(id _Nullable)element atLocation:(CGPoint)location {
+  id responder;
+#if defined(__IPHONE_18_0) && __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_18_0
+  static NSString *const kSwiftUIAccessiblityNodeClassName = @"SwiftUI.AccessibilityNode";
+  if (![element isKindOfClass:NSClassFromString(kSwiftUIAccessiblityNodeClassName)]) {
+    return responder;
+  }
+  if (![element respondsToSelector:@selector(accessibilityContainer)]) {
+    return responder;
+  }
+  id container = [element accessibilityContainer];
+
+  // _UIHitTestContext is a private class for an object used in UIResponder's
+  // method that can retrieve the UIResponder for a given point:
+  // `_hitTestWithContext:` returning @c UIResponder&UIGestureRecognizerContainer.
+  id context = [NSClassFromString(@"_UIHitTestContext") contextWithPoint:location radius:1.0];
+  // We need to walk up the accessibility container chain until we find the one that
+  // can retrieve the responder.
+  while (!responder && container) {
+    if ([container respondsToSelector:NSSelectorFromString(@"_hitTestWithContext:")]) {
+      responder = [container _hitTestWithContext:context];
+    }
+    container = [container accessibilityContainer];
+  }
+#endif
+  return responder;
+}
+
+/**
  * Takes a GREYTouchInfo object and converts it into a UITouch. Also adds the newly created
  * touch object and adds it to an array of ongoing touches.
  *
@@ -242,6 +300,16 @@ static NSTimeInterval AdjustedDeliveryTimeDelta(GREYTouchInfo *touchInfo) {
         [touch setView:[_window hitTest:touchPoint withEvent:event]];
       }
     }
+
+#if defined(__IPHONE_18_0) && __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_18_0
+    if (touchInfo.element) {
+      id responder = [[self class] grey_gestureContainerWithElement:touchInfo.element
+                                                         atLocation:touchPoint];
+      if (responder) {
+        [touch _setResponder:responder];
+      }
+    }
+#endif
 
     // Set phase appropriate values.
     [touch setPhase:touchInfo.phase];

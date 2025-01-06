@@ -55,7 +55,11 @@
   GREYExecuteSyncBlockInBackgroundQueue(^{
     [self->_remoteElementInteraction performAction:action error:&interactionError];
   });
-  GREYHandleInteractionError(interactionError, errorOrNil);
+
+  if (interactionError) {
+    GREYHandleInteractionError(interactionError, errorOrNil);
+  }
+
   return self;
 }
 

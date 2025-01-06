@@ -21,8 +21,8 @@
 
 #import "NSFileManager+GREYCommon.h"
 #import "NSObject+GREYCommon.h"
-#import "GREYFatalAsserts.h"
 #import "GREYLogger.h"
+#import "CGGeometry+GREYUI.h"
 #import "GREYUIWindowProvider.h"
 #import "GREYUILibUtils.h"
 
@@ -44,6 +44,15 @@ static UIScreen *MainScreen(void) {
   }
 }
 
+static CGRect CGRectPixelAligned(CGRect rectInPixels) {
+  rectInPixels.origin.x = round(rectInPixels.origin.x);
+  rectInPixels.origin.y = round(rectInPixels.origin.y);
+  rectInPixels.size.width = ceil(rectInPixels.size.width);
+  rectInPixels.size.height = ceil(rectInPixels.size.height);
+
+  return rectInPixels;
+}
+
 @implementation GREYScreenshotter
 
 + (void)initialize {
@@ -54,18 +63,17 @@ static UIScreen *MainScreen(void) {
   }
 }
 
-+ (void)drawScreenInContext:(CGContextRef)bitmapContextRef
++ (void)drawScreenInContext:(UIGraphicsImageRendererContext *)context
          afterScreenUpdates:(BOOL)afterUpdates
               withStatusBar:(BOOL)includeStatusBar {
-  GREYFatalAssertWithMessage(CGBitmapContextGetBitmapInfo(bitmapContextRef) != 0,
-                             @"The context ref must point to a CGBitmapContext.");
   UIScreen *mainScreen = MainScreen();
   if (!mainScreen) return;
   CGRect screenRect = mainScreen.bounds;
-  [self drawScreenInContext:bitmapContextRef
-         afterScreenUpdates:afterUpdates
-               inScreenRect:screenRect
-              withStatusBar:includeStatusBar];
+  NSEnumerator *visibleWindowsInReverse =
+      [[self visibleWindowsWithStatusBar:includeStatusBar] reverseObjectEnumerator];
+  for (UIWindow *window in visibleWindowsInReverse) {
+    [self drawViewInContext:context view:window bounds:screenRect afterScreenUpdates:afterUpdates];
+  }
 }
 
 + (UIImage *)takeScreenshot {
@@ -93,15 +101,14 @@ static UIScreen *MainScreen(void) {
 
   UIScreen *mainScreen = MainScreen();
   if (!mainScreen) return nil;
-  UIGraphicsBeginImageContextWithOptions(elementAXFrame.size, NO, mainScreen.scale);
+  UIGraphicsImageRendererFormat *format = [UIGraphicsImageRendererFormat preferredFormat];
+  format.scale = mainScreen.scale;
   // We want to capture the most up-to-date version of the screen here, including the updates that
-  // have been made in the current runloop iteration. Therefore we use `afterScreenUpdates:YES`.
-  [self drawViewInContext:UIGraphicsGetCurrentContext()
-                     view:viewToSnapshot
-                   bounds:elementAXFrame
-       afterScreenUpdates:YES];
-  UIImage *orientedScreenshot = UIGraphicsGetImageFromCurrentImageContext();
-  UIGraphicsEndImageContext();
+  // have been made in the current runloop iteration. Therefore we use
+  UIImage *orientedScreenshot = [self imageOfViews:@[ viewToSnapshot ].objectEnumerator
+                                      inScreenRect:elementAXFrame
+                                        withFormat:format
+                                afterScreenUpdates:YES];
 
   return orientedScreenshot;
 }
@@ -130,13 +137,13 @@ static UIScreen *MainScreen(void) {
                                       inScreenRect:(CGRect)screenRect
                                      withStatusBar:(BOOL)includeStatusBar
                                       forDebugging:(BOOL)forDebugging {
-  UIGraphicsBeginImageContextWithOptions(screenRect.size, !iOS17_OR_ABOVE(), 0);
-  [self drawScreenInContext:UIGraphicsGetCurrentContext()
-         afterScreenUpdates:afterScreenUpdates
-               inScreenRect:screenRect
-              withStatusBar:includeStatusBar];
-  UIImage *orientedScreenshot = UIGraphicsGetImageFromCurrentImageContext();
-  UIGraphicsEndImageContext();
+  UIGraphicsImageRendererFormat *format = [UIGraphicsImageRendererFormat preferredFormat];
+  format.opaque = !iOS17_OR_ABOVE();
+  NSArray<UIView *> *visibleWindows = [self visibleWindowsWithStatusBar:includeStatusBar];
+  UIImage *orientedScreenshot = [self imageOfViews:visibleWindows.reverseObjectEnumerator
+                                      inScreenRect:screenRect
+                                        withFormat:format
+                                afterScreenUpdates:afterScreenUpdates];
 
 
   return orientedScreenshot;
@@ -144,38 +151,71 @@ static UIScreen *MainScreen(void) {
 
 #pragma mark - Private
 
-+ (void)drawScreenInContext:(CGContextRef)bitmapContextRef
-         afterScreenUpdates:(BOOL)afterUpdates
-               inScreenRect:(CGRect)screenRect
-              withStatusBar:(BOOL)includeStatusBar {
-  GREYFatalAssertWithMessage(CGBitmapContextGetBitmapInfo(bitmapContextRef) != 0,
-                             @"The context ref must point to a CGBitmapContext.");
-  // The bitmap context width and height are scaled, so we need to undo the scale adjustment.
-  NSEnumerator *allWindowsInReverse =
-      [[GREYUIWindowProvider allWindowsWithStatusBar:includeStatusBar] reverseObjectEnumerator];
-  for (UIWindow *window in allWindowsInReverse) {
-    if (window.hidden || window.alpha == 0) {
-      continue;
++ (UIImage *)imageOfViews:(NSEnumerator<UIView *> *)views
+             inScreenRect:(CGRect)screenRect
+               withFormat:(UIGraphicsImageRendererFormat *)format
+       afterScreenUpdates:(BOOL)afterUpdates {
+  CGRect snapshotRect = screenRect;
+  // When possible, only draws the portion where the target rect is located instead of drawing the
+  // entire screen and cropping it to the size of the target rect. This optimization works when
+  // using @c UIGraphicsBeginImageContextWithOptions (deprecated in iOS 17), but results in a
+  // partial render with @c UIGraphicsImageRendererFormat in some cases. It is not completely clear
+  // what triggers this, but some necessary conditions are:
+  // 1. screenshot is taken on a physical device with iOS 16 or below
+  // 2. @c screenRect is contained by the entire screen bounds
+#if !TARGET_OS_SIMULATOR
+  if (!iOS17_OR_ABOVE()) {
+    UIScreen *mainScreen = MainScreen();
+    if (!mainScreen) return nil;
+    if (CGRectContainsRect(mainScreen.bounds, snapshotRect)) {
+      snapshotRect = mainScreen.bounds;
     }
-    [self drawViewInContext:bitmapContextRef
-                       view:window
-                     bounds:screenRect
-         afterScreenUpdates:afterUpdates];
   }
+#endif
+
+  UIGraphicsImageRenderer *renderer =
+      [[UIGraphicsImageRenderer alloc] initWithSize:snapshotRect.size format:format];
+  UIImage *image = [renderer imageWithActions:^(UIGraphicsImageRendererContext *context) {
+    for (UIView *view in views) {
+      [self drawViewInContext:context
+                         view:view
+                       bounds:snapshotRect
+           afterScreenUpdates:afterUpdates];
+    }
+  }];
+
+  if (!CGRectEqualToRect(snapshotRect, screenRect)) {
+    CGRect rectInPixels = CGRectPixelAligned(CGRectPointToPixel(screenRect));
+    CGImageRef croppedImage = CGImageCreateWithImageInRect(image.CGImage, rectInPixels);
+    image = [UIImage imageWithCGImage:croppedImage
+                                scale:image.scale
+                          orientation:image.imageOrientation];
+    CGImageRelease(croppedImage);
+  }
+
+  return image;
+}
+
++ (NSArray<UIWindow *> *)visibleWindowsWithStatusBar:(BOOL)includeStatusBar {
+  NSPredicate *visiblePredicate = [NSPredicate
+      predicateWithBlock:^BOOL(UIWindow *window, NSDictionary<NSString *, id> *bindings) {
+        return !window.hidden && window.alpha != 0;
+      }];
+  return [[GREYUIWindowProvider allWindowsWithStatusBar:includeStatusBar]
+      filteredArrayUsingPredicate:visiblePredicate];
 }
 
 /**
  * Draws the @c view and its subviews within the specified @c bounds to the provided @c
- * bitmapContextRef. This centers the view to the context if the context size and view size are
- * different.
+ * context. This centers the view to the context if the context size and view size are different.
  *
- * @param bitmapContextRef   Target bitmap context for rendering.
+ * @param context            UIGraphicsImageRenderer context for rendering.
  * @param view               The view to draw to the context.
  * @param boundsInScreenRect The bounds of the view to draw to the context in window coordinate.
  * @param afterScreenUpdates BOOL indicating whether to render before (@c NO) or after (@c YES)
  *                           screen updates.
  */
-+ (void)drawViewInContext:(CGContextRef)bitmapContextRef
++ (void)drawViewInContext:(UIGraphicsImageRendererContext *)context
                      view:(UIView *)view
                    bounds:(CGRect)boundsInScreenRect
        afterScreenUpdates:(BOOL)afterScreenUpdates {
@@ -183,8 +223,9 @@ static UIScreen *MainScreen(void) {
   if (!mainScreen) return;
   // The bitmap context width and height are scaled, so we need to undo the scale adjustment.
   CGFloat scale = mainScreen.scale;
-  CGFloat contextWidth = CGBitmapContextGetWidth(bitmapContextRef) / scale;
-  CGFloat contextHeight = CGBitmapContextGetHeight(bitmapContextRef) / scale;
+  CGSize size = context.format.bounds.size;
+  CGFloat contextWidth = size.width / scale;
+  CGFloat contextHeight = size.height / scale;
   CGSize boundsSize = boundsInScreenRect.size;
   CGFloat xOffset = (contextWidth - boundsSize.width) / 2;
   CGFloat yOffset = (contextHeight - boundsSize.height) / 2;
@@ -192,26 +233,27 @@ static UIScreen *MainScreen(void) {
   // This special case is for Alert-Views that for some reason do not render correctly.
   if ([view isKindOfClass:gUIAlertControllerShimPresenterWindowClass] ||
       [view isKindOfClass:gUIModalItemHostingWindowClass]) {
-    CGContextSaveGState(bitmapContextRef);
+    CGContextRef ctxRef = context.CGContext;
+    CGContextSaveGState(ctxRef);
     if (xOffset == 0 && yOffset == 0) {
       // If the screenRect and context size is the same, capture the screenRect of the
       // current window.
       CGAffineTransform searchTranslate = CGAffineTransformMakeTranslation(
           -boundsInScreenRect.origin.x, -boundsInScreenRect.origin.y);
-      CGContextConcatCTM(bitmapContextRef, searchTranslate);
+      CGContextConcatCTM(ctxRef, searchTranslate);
     } else {
       // Center the screenshot of the current window if the screenRect and the context size
       // is different.
       CGRect viewRect = view.bounds;
       CGPoint viewCenter = view.center;
       CGPoint viewAnchor = view.layer.anchorPoint;
-      CGContextTranslateCTM(bitmapContextRef, viewCenter.x + xOffset, viewCenter.y + yOffset);
-      CGContextConcatCTM(bitmapContextRef, view.transform);
-      CGContextTranslateCTM(bitmapContextRef, -CGRectGetWidth(viewRect) * viewAnchor.x,
+      CGContextTranslateCTM(ctxRef, viewCenter.x + xOffset, viewCenter.y + yOffset);
+      CGContextConcatCTM(ctxRef, view.transform);
+      CGContextTranslateCTM(ctxRef, -CGRectGetWidth(viewRect) * viewAnchor.x,
                             -CGRectGetHeight(viewRect) * viewAnchor.y);
     }
     [view.layer renderInContext:UIGraphicsGetCurrentContext()];
-    CGContextRestoreGState(bitmapContextRef);
+    CGContextRestoreGState(ctxRef);
   } else {
     // Convert to local coordinate.
     CGRect localFrame = [view convertRect:boundsInScreenRect fromView:nil];
@@ -234,11 +276,13 @@ static UIScreen *MainScreen(void) {
     return image;
   }
 
-  UIGraphicsBeginImageContextWithOptions(image.size, NO, image.scale);
-  CGRect imageRect = CGRectMake(0, 0, image.size.width, image.size.height);
-  [image drawInRect:imageRect];
-  UIImage *rotatedImage = UIGraphicsGetImageFromCurrentImageContext();
-  UIGraphicsEndImageContext();
+  UIGraphicsImageRendererFormat *format = [UIGraphicsImageRendererFormat preferredFormat];
+  format.scale = image.scale;
+  UIGraphicsImageRenderer *renderer = [[UIGraphicsImageRenderer alloc] initWithSize:image.size
+                                                                             format:format];
+  UIImage *rotatedImage = [renderer imageWithActions:^(UIGraphicsImageRendererContext *context) {
+    [image drawInRect:CGRectMake(0, 0, image.size.width, image.size.height)];
+  }];
 
   return rotatedImage;
 }

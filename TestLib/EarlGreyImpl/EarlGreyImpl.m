@@ -497,6 +497,23 @@ static BOOL ExecuteSyncBlockInBackgroundQueue(BOOL (^block)(void)) {
   return sheetPresent;
 }
 
+- (void)tapElementInActivitySheetWithID:(NSString *)identifier error:(NSError **)error {
+  XCUIApplication *currentApplication = [[XCUIApplication alloc] init];
+  XCUIElement *activitySheet = currentApplication.otherElements[@"ActivityListView"];
+  XCUIElement *element = [activitySheet descendantsMatchingType:XCUIElementTypeAny][identifier];
+  if ([element exists]) {
+    [element tap];
+    return;
+  }
+
+  NSString *description = [NSString
+      stringWithFormat:@"Activity Sheet element not present with identifier: %@", identifier];
+  GREYError *localError =
+      GREYErrorMake(kGREYActivitySheetHandlingErrorDomain,
+                    GREYActivitySheetHandlingSheetElementNotPresent, description);
+  GREYHandleInteractionError(localError, error);
+}
+
 - (BOOL)tapButtonInActivitySheetWithId:(NSString *)identifier error:(NSError **)error {
   BOOL buttonPresent = [self buttonPresentInActivitySheetWithId:identifier error:error];
   if (buttonPresent) {
@@ -520,11 +537,13 @@ static BOOL ExecuteSyncBlockInBackgroundQueue(BOOL (^block)(void)) {
   if (sheetPresent) {
     XCUIApplication *currentApplication = [[XCUIApplication alloc] init];
     XCUIElement *activitySheet = currentApplication.otherElements[@"ActivityListView"];
-    XCUIElementQuery *activityTexts =
-        [activitySheet descendantsMatchingType:XCUIElementTypeStaticText];
-    XCUIElement *button = [activityTexts elementMatchingType:XCUIElementTypeStaticText
-                                                  identifier:identifier];
-    if (button) {
+    XCUIElementType type = XCUIElementTypeStaticText;
+    if ([identifier isEqualToString:@"Close"]) {
+      type = XCUIElementTypeButton;
+    }
+    XCUIElementQuery *activityTexts = [activitySheet descendantsMatchingType:type];
+    XCUIElement *button = [activityTexts elementMatchingType:type identifier:identifier];
+    if (button && [button exists]) {
       return YES;
     } else {
       NSString *description = [NSString

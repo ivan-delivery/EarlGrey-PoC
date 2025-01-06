@@ -52,6 +52,7 @@
 #import "GREYHostApplicationDistantObject.h"
 #import "GREYHostBackgroundDistantObject.h"
 #import "GREYTestApplicationDistantObject.h"
+#import "EDOHostPort.h"
 #import "EDOClientService.h"
 #import "EDOHostService.h"
 #import "EDORemoteVariable.h"
@@ -64,6 +65,7 @@
 #import "GREYIdlingResource.h"
 
 // Miscellaneous APIs
+#import "GREYSyntheticEvents.h"
 #import "GREYKeyboard.h"
 #import "NSFileManager+GREYCommon.h"
 #import "NSObject+GREYCommon.h"
@@ -71,6 +73,7 @@
 #import "GREYConfigKey.h"
 #import "GREYConfiguration.h"
 #import "GREYError.h"
+#import "GREYErrorConstants.h"
 #import "GREYFailureHandler.h"
 #import "GREYFrameworkException.h"
 #import "GREYConstants.h"

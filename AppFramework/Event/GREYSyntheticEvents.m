@@ -49,13 +49,38 @@ static const NSTimeInterval kMinimumDelayBetweenTouchPathEvents = 1.0 / 120.0;
   [self touchAlongMultiplePaths:@[ touchPath ]
                relativeToWindow:window
                     forDuration:duration
-                        timeout:timeout];
+                        timeout:timeout
+                        element:nil];
+}
+
++ (void)touchAlongPath:(NSArray *)touchPath
+      relativeToWindow:(UIWindow *)window
+           forDuration:(NSTimeInterval)duration
+               timeout:(NSTimeInterval)timeout
+               element:(id _Nullable)element {
+  [self touchAlongMultiplePaths:@[ touchPath ]
+               relativeToWindow:window
+                    forDuration:duration
+                        timeout:timeout
+                        element:element];
 }
 
 + (void)touchAlongMultiplePaths:(NSArray *)touchPaths
                relativeToWindow:(UIWindow *)window
                     forDuration:(NSTimeInterval)duration
                         timeout:(NSTimeInterval)timeout {
+  [self touchAlongMultiplePaths:touchPaths
+               relativeToWindow:window
+                    forDuration:duration
+                        timeout:timeout
+                        element:nil];
+}
+
++ (void)touchAlongMultiplePaths:(NSArray *)touchPaths
+               relativeToWindow:(UIWindow *)window
+                    forDuration:(NSTimeInterval)duration
+                        timeout:(NSTimeInterval)timeout
+                        element:(id _Nullable)element {
   GREYThrowOnFailedCondition(touchPaths.count >= 1);
   GREYThrowOnFailedCondition(duration >= 0);
 
@@ -66,7 +91,8 @@ static const NSTimeInterval kMinimumDelayBetweenTouchPathEvents = 1.0 / 120.0;
   [eventGenerator grey_beginTouchesAtPoints:[self grey_objectsAtIndex:0 ofArrays:touchPaths]
                            relativeToWindow:window
                           immediateDelivery:NO
-                                    timeout:timeout];
+                                    timeout:timeout
+                                    element:element];
 
   // If the paths have a single point, then just inject an "end" event with the delay being the
   // provided duration. Otherwise, insert multiple "continue" events with delays being a fraction
@@ -75,7 +101,8 @@ static const NSTimeInterval kMinimumDelayBetweenTouchPathEvents = 1.0 / 120.0;
     [eventGenerator grey_endTouchesAtPoints:[self grey_objectsAtIndex:firstTouchPathSize - 1
                                                              ofArrays:touchPaths]
           timeElapsedSinceLastTouchDelivery:duration
-                                    timeout:timeout];
+                                    timeout:timeout
+                                    element:element];
   } else {
     // Start injecting "continue touch" events, starting from the second position on the touch
     // path as it was already injected as a "begin touch" event.
@@ -85,13 +112,15 @@ static const NSTimeInterval kMinimumDelayBetweenTouchPathEvents = 1.0 / 120.0;
       [eventGenerator grey_continueTouchAtPoints:[self grey_objectsAtIndex:i ofArrays:touchPaths]
           afterTimeElapsedSinceLastTouchDelivery:delayBetweenEachEvent
                                immediateDelivery:NO
-                                         timeout:timeout];
+                                         timeout:timeout
+                                         element:element];
     }
 
     [eventGenerator grey_endTouchesAtPoints:[self grey_objectsAtIndex:firstTouchPathSize - 1
                                                              ofArrays:touchPaths]
           timeElapsedSinceLastTouchDelivery:0
-                                    timeout:timeout];
+                                    timeout:timeout
+                                    element:element];
   }
 }
 
@@ -111,27 +140,56 @@ static const NSTimeInterval kMinimumDelayBetweenTouchPathEvents = 1.0 / 120.0;
          relativeToWindow:(UIWindow *)window
         immediateDelivery:(BOOL)immediate
                   timeout:(NSTimeInterval)timeout {
+  [self beginTouchAtPoint:point
+         relativeToWindow:window
+        immediateDelivery:immediate
+                  timeout:timeout
+                  element:nil];
+}
+
+- (void)beginTouchAtPoint:(CGPoint)point
+         relativeToWindow:(UIWindow *)window
+        immediateDelivery:(BOOL)immediate
+                  timeout:(NSTimeInterval)timeout
+                  element:(id _Nullable)element {
   _lastInjectedTouchPoint = [NSValue valueWithCGPoint:point];
   [self grey_beginTouchesAtPoints:@[ _lastInjectedTouchPoint ]
                  relativeToWindow:window
                 immediateDelivery:immediate
-                          timeout:timeout];
+                          timeout:timeout
+                          element:element];
 }
 
 - (void)continueTouchAtPoint:(CGPoint)point
            immediateDelivery:(BOOL)immediate
                      timeout:(NSTimeInterval)timeout {
+  [self continueTouchAtPoint:point immediateDelivery:immediate timeout:timeout element:nil];
+}
+
+- (void)continueTouchAtPoint:(CGPoint)point
+           immediateDelivery:(BOOL)immediate
+                     timeout:(NSTimeInterval)timeout
+                     element:(id _Nullable)element {
   _lastInjectedTouchPoint = [NSValue valueWithCGPoint:point];
   [self grey_continueTouchAtPoints:@[ _lastInjectedTouchPoint ]
       afterTimeElapsedSinceLastTouchDelivery:kMinimumDelayBetweenTouchPathEvents
                            immediateDelivery:immediate
-                                     timeout:timeout];
+                                     timeout:timeout
+                                     element:element];
 }
 
 - (void)endTouchWithTimeout:(NSTimeInterval)timeout {
   [self grey_endTouchesAtPoints:@[ _lastInjectedTouchPoint ]
       timeElapsedSinceLastTouchDelivery:kMinimumDelayBetweenTouchPathEvents
-                                timeout:timeout];
+                                timeout:timeout
+                                element:nil];
+}
+
+- (void)endTouchWithTimeout:(NSTimeInterval)timeout element:(id _Nullable)element {
+  [self grey_endTouchesAtPoints:@[ _lastInjectedTouchPoint ]
+      timeElapsedSinceLastTouchDelivery:kMinimumDelayBetweenTouchPathEvents
+                                timeout:timeout
+                                element:element];
 }
 
 #pragma mark - Private
@@ -169,14 +227,17 @@ static const NSTimeInterval kMinimumDelayBetweenTouchPathEvents = 1.0 / 120.0;
 - (void)grey_beginTouchesAtPoints:(NSArray<NSValue *> *)points
                  relativeToWindow:(UIWindow *)window
                 immediateDelivery:(BOOL)immediate
-                          timeout:(NSTimeInterval)timeout {
+                          timeout:(NSTimeInterval)timeout
+                          element:(id _Nullable)element {
   GREYFatalAssertWithMessage(!_touchInjector,
                              @"Cannot call this method more than once until endTouch is called.");
 
   _touchInjector = [[GREYTouchInjector alloc] initWithWindow:window];
+
   GREYTouchInfo *touchInfo = [[GREYTouchInfo alloc] initWithPoints:points
                                                              phase:UITouchPhaseBegan
-                                   deliveryTimeDeltaSinceLastTouch:0];
+                                   deliveryTimeDeltaSinceLastTouch:0
+                                                           element:element];
   [_touchInjector enqueueTouchInfoForDelivery:touchInfo];
 
   if (immediate) {
@@ -197,10 +258,12 @@ static const NSTimeInterval kMinimumDelayBetweenTouchPathEvents = 1.0 / 120.0;
 - (void)grey_continueTouchAtPoints:(NSArray<NSValue *> *)points
     afterTimeElapsedSinceLastTouchDelivery:(NSTimeInterval)seconds
                          immediateDelivery:(BOOL)immediate
-                                   timeout:(NSTimeInterval)timeout {
+                                   timeout:(NSTimeInterval)timeout
+                                   element:(id _Nullable)element {
   GREYTouchInfo *touchInfo = [[GREYTouchInfo alloc] initWithPoints:points
                                                              phase:UITouchPhaseMoved
-                                   deliveryTimeDeltaSinceLastTouch:seconds];
+                                   deliveryTimeDeltaSinceLastTouch:seconds
+                                                           element:element];
   [_touchInjector enqueueTouchInfoForDelivery:touchInfo];
   if (immediate) {
     [_touchInjector waitUntilAllTouchesAreDeliveredWithTimeout:timeout];
@@ -216,10 +279,12 @@ static const NSTimeInterval kMinimumDelayBetweenTouchPathEvents = 1.0 / 120.0;
  */
 - (void)grey_endTouchesAtPoints:(NSArray<NSValue *> *)points
     timeElapsedSinceLastTouchDelivery:(NSTimeInterval)seconds
-                              timeout:(NSTimeInterval)timeout {
+                              timeout:(NSTimeInterval)timeout
+                              element:(id _Nullable)element {
   GREYTouchInfo *touchInfo = [[GREYTouchInfo alloc] initWithPoints:points
                                                              phase:UITouchPhaseEnded
-                                   deliveryTimeDeltaSinceLastTouch:seconds];
+                                   deliveryTimeDeltaSinceLastTouch:seconds
+                                                           element:element];
   [_touchInjector enqueueTouchInfoForDelivery:touchInfo];
   [_touchInjector waitUntilAllTouchesAreDeliveredWithTimeout:timeout];
 
@@ -229,20 +294,22 @@ static const NSTimeInterval kMinimumDelayBetweenTouchPathEvents = 1.0 / 120.0;
 @end
 
 void GREYPerformMultipleTap(CGPoint location, UIWindow *window, NSUInteger tapCount,
-                            NSTimeInterval timeout) {
+                            NSTimeInterval timeout, id element) {
   GREYTouchInjector *touchInjector = [[GREYTouchInjector alloc] initWithWindow:window];
   NSArray<NSValue *> *touchPath = @[ [NSValue valueWithCGPoint:location] ];
 
   GREYTouchInfo *beginTouchInfo = [[GREYTouchInfo alloc] initWithPoints:touchPath
                                                            withTapCount:tapCount
                                                                   phase:UITouchPhaseBegan
-                                        deliveryTimeDeltaSinceLastTouch:0];
+                                        deliveryTimeDeltaSinceLastTouch:0
+                                                                element:element];
   [touchInjector enqueueTouchInfoForDelivery:beginTouchInfo];
 
   GREYTouchInfo *endTouchInfo = [[GREYTouchInfo alloc] initWithPoints:touchPath
                                                          withTapCount:tapCount
                                                                 phase:UITouchPhaseEnded
-                                      deliveryTimeDeltaSinceLastTouch:0];
+                                      deliveryTimeDeltaSinceLastTouch:0
+                                                              element:element];
   [touchInjector enqueueTouchInfoForDelivery:endTouchInfo];
   [touchInjector waitUntilAllTouchesAreDeliveredWithTimeout:timeout];
 }

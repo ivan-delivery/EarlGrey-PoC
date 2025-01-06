@@ -96,7 +96,8 @@
   [eventGenerator beginTouchAtPoint:[slider convertPoint:touchPoint toView:nil]
                    relativeToWindow:[slider window]
                   immediateDelivery:YES
-                            timeout:interactionTimeout];
+                            timeout:interactionTimeout
+                            element:slider];
 
   // |slider.value| could have changed, because touch down sometimes moves the thumb.
   CGFloat previousSliderValue = currentSliderValue;
@@ -127,7 +128,8 @@
       touchPoint = CGPointMake(touchPoint.x + (CGFloat)amountToSlide, touchPoint.y);
       [eventGenerator continueTouchAtPoint:[slider convertPoint:touchPoint toView:nil]
                          immediateDelivery:YES
-                                   timeout:interactionTimeout];
+                                   timeout:interactionTimeout
+                                   element:slider];
 
       // For debugging purposes, leave this in.
       GREYLogVerbose(@"Slider value after moving: %f", [self valueForSlider:slider]);
@@ -155,7 +157,7 @@
     }
   }
 
-  [eventGenerator endTouchWithTimeout:interactionTimeout];
+  [eventGenerator endTouchWithTimeout:interactionTimeout element:slider];
   return YES;
 }
 

@@ -502,7 +502,6 @@
 		FD50491D20FB238300261CBE /* GREYTestApplicationDistantObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GREYTestApplicationDistantObject.m; path = DistantObject/GREYTestApplicationDistantObject.m; sourceTree = "<group>"; };
 		FD50492120FB239800261CBE /* EarlGreyImpl+XCUIApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "EarlGreyImpl+XCUIApplication.h"; path = "EarlGreyImpl/EarlGreyImpl+XCUIApplication.h"; sourceTree = "<group>"; };
 		FD50492220FB239800261CBE /* GREYElementInteractionProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GREYElementInteractionProxy.m; path = EarlGreyImpl/GREYElementInteractionProxy.m; sourceTree = "<group>"; };
-		FD50492320FB239800261CBE /* GREYXCTestAppleInternals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GREYXCTestAppleInternals.h; path = EarlGreyImpl/GREYXCTestAppleInternals.h; sourceTree = "<group>"; };
 		FD50492420FB239800261CBE /* XCUIApplication+GREYTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "XCUIApplication+GREYTest.m"; path = "EarlGreyImpl/XCUIApplication+GREYTest.m"; sourceTree = "<group>"; };
 		FD50492520FB239800261CBE /* EarlGreyImpl+XCUIApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "EarlGreyImpl+XCUIApplication.m"; path = "EarlGreyImpl/EarlGreyImpl+XCUIApplication.m"; sourceTree = "<group>"; };
 		FD50492620FB239800261CBE /* EarlGrey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EarlGrey.m; path = EarlGreyImpl/EarlGreyImpl.m; sourceTree = "<group>"; };
@@ -933,7 +932,6 @@
 				FD50492520FB239800261CBE /* EarlGreyImpl+XCUIApplication.m */,
 				FD50492720FB239800261CBE /* GREYElementInteractionProxy.h */,
 				FD50492220FB239800261CBE /* GREYElementInteractionProxy.m */,
-				FD50492320FB239800261CBE /* GREYXCTestAppleInternals.h */,
 				FD50492820FB239800261CBE /* XCUIApplication+GREYTest.h */,
 				FD50492420FB239800261CBE /* XCUIApplication+GREYTest.m */,
 			);

@@ -29,6 +29,24 @@
 #import "CGGeometry+GREYUI.h"
 #import "GREYElementHierarchy.h"
 
+/**
+ * Protocol for accessing _HitTestContext's private contextWithPoint:radius: method.
+ * Required to access the UIResponder that should be used for touch injection for SwiftUI elements
+ * in iOS 18+.
+ */
+@protocol _PrivateHitTestContext
++ (id)contextWithPoint:(struct CGPoint)arg1 radius:(double)arg2;
+@end
+
+/**
+ * Protocol for accessing the UIResponder's private hitTest method.
+ * Required to access the UIResponder that should be used for touch injection for SwiftUI elements
+ * in iOS 18+.
+ */
+@protocol _PrivateUIResponder
+- (id)_hitTestWithContext:(id)arg1;
+@end
+
 @implementation GREYTapper
 
 + (BOOL)tapOnElement:(id)element
@@ -68,7 +86,7 @@
   CFTimeInterval interactionTimeout = GREY_CONFIG_DOUBLE(kGREYConfigKeyInteractionTimeoutDuration);
   for (NSUInteger i = 1; i <= numberOfTaps; i++) {
     @autoreleasepool {
-      GREYPerformMultipleTap(location, window, i, interactionTimeout);
+      GREYPerformMultipleTap(location, window, i, interactionTimeout, element);
     }
   }
   return YES;
@@ -99,7 +117,8 @@
   [GREYSyntheticEvents touchAlongPath:touchPath
                      relativeToWindow:window
                           forDuration:duration
-                              timeout:interactionTimeout];
+                              timeout:interactionTimeout
+                              element:element];
   return YES;
 }
 

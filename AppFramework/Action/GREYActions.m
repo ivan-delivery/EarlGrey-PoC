@@ -386,8 +386,21 @@ static Protocol *gTextInputProtocol;
 
 + (id<GREYAction>)actionForJavaScriptExecution:(NSString *)js
                                         output:(EDORemoteVariable<NSString *> *)outResult {
+  return [self actionForJavaScriptExecution:js output:outResult asyncExecution:NO];
+}
+
++ (id<GREYAction>)actionForAsyncJavaScriptExecution:(NSString *)js
+                                             output:(EDORemoteVariable<NSString *> *)outResult {
+  return [self actionForJavaScriptExecution:js output:outResult asyncExecution:YES];
+}
+
++ (id<GREYAction>)actionForJavaScriptExecution:(NSString *)js
+                                        output:(EDORemoteVariable<NSString *> *)outResult
+                                asyncExecution:(BOOL)asyncExecution {
 #if TARGET_OS_IOS
-  NSString *diagnosticsID = GREYCorePrefixedDiagnosticsID(@"executeJavaScript");
+  NSString *diagnosticsID = asyncExecution
+                                ? GREYCorePrefixedDiagnosticsID(@"executeAsyncJavaScript")
+                                : GREYCorePrefixedDiagnosticsID(@"executeJavaScript");
   // TODO: JS Errors should be propagated up.
   id<GREYMatcher> systemAlertShownMatcher = [GREYMatchers matcherForSystemAlertViewShown];
   NSArray<id<GREYMatcher>> *webViewMatchers =
@@ -406,18 +419,34 @@ static Protocol *gTextInputProtocol;
        performBlock:^BOOL(id webView, __strong NSError **errorOrNil) {
          __block NSError *localError = nil;
          __block BOOL finishedCompletion = NO;
+         void (^completionHandler)(id, NSError *) = ^(id result, NSError *error) {
+           if (result) {
+             // Populate the javascript result for the user to get back.
+             outResult.object = [NSString stringWithFormat:@"%@", result];
+           }
+           if (error) {
+             localError = error;
+           }
+           finishedCompletion = YES;
+         };
          grey_dispatch_sync_on_main_thread(^{
-           [webView evaluateJavaScript:js
-                     completionHandler:^(id result, NSError *error) {
-                       if (result) {
-                         // Populate the javascript result for the user to get back.
-                         outResult.object = [NSString stringWithFormat:@"%@", result];
-                       }
-                       if (error) {
-                         localError = error;
-                       }
-                       finishedCompletion = YES;
-                     }];
+           if (asyncExecution) {
+             if (@available(iOS 14.0, macOS 11.0, *)) {
+               [webView callAsyncJavaScript:js
+                                  arguments:@{}
+                                    inFrame:nil
+                             inContentWorld:WKContentWorld.defaultClientWorld
+                          completionHandler:completionHandler];
+             } else {
+               I_GREYPopulateError(&localError, kGREYInteractionErrorDomain,
+                                   kGREYWKWebViewInteractionFailedErrorCode,
+                                   @"Async JavaScript execution is only supported on iOS 14+.");
+               // Pretend the completion handler was called. Otherwise it's treated as a timeout.
+               finishedCompletion = YES;
+             }
+           } else {
+             [webView evaluateJavaScript:js completionHandler:completionHandler];
+           }
          });
          // Wait for the interaction timeout for the semaphore to return.
          CFTimeInterval interactionTimeout =
@@ -620,10 +649,8 @@ __unused static id<GREYAction> ActionForTurnSwitchOn(BOOL on, NSString *diagnost
                                                      id<GREYAction> action) {
 #if TARGET_OS_IOS
   id<GREYMatcher> systemAlertShownMatcher = [GREYMatchers matcherForSystemAlertViewShown];
-  NSArray<id<GREYMatcher>> *constraintMatchers = @[
-    [GREYMatchers matcherForNegation:systemAlertShownMatcher],
-    [GREYMatchers matcherForRespondsToSelector:@selector(isOn)]
-  ];
+  NSArray<id<GREYMatcher>> *constraintMatchers =
+      @[ [GREYMatchers matcherForNegation:systemAlertShownMatcher] ];
   id<GREYMatcher> constraints = [[GREYAllOf alloc] initWithMatchers:constraintMatchers];
   NSString *actionName =
       [NSString stringWithFormat:@"Turn switch to %@ state", [UISwitch grey_stringFromOnState:on]];
@@ -634,8 +661,8 @@ __unused static id<GREYAction> ActionForTurnSwitchOn(BOOL on, NSString *diagnost
                             performBlock:^BOOL(id switchView, __strong NSError **errorOrNil) {
                               __block BOOL toggleSwitch = NO;
                               grey_dispatch_sync_on_main_thread(^{
-                                toggleSwitch =
-                                    ([switchView isOn] && !on) || (![switchView isOn] && on);
+                                BOOL isOn = [[switchView accessibilityValue] boolValue];
+                                toggleSwitch = !!isOn != !!on;
                               });
                               if (toggleSwitch) {
                                 return [action perform:switchView error:errorOrNil];

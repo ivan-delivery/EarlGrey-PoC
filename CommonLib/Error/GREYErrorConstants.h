@@ -312,6 +312,10 @@ typedef NS_ENUM(NSUInteger, GREYActivitySheetHandlingErrorCode) {
    */
   GREYActivitySheetHandlingSheetButtonNotPresent,
   /**
+   * Activity sheet element not present when expected.
+   */
+  GREYActivitySheetHandlingSheetElementNotPresent,
+  /**
    * Activity sheet not absent when expected.
    */
   GREYActivitySheetHandlingSheetNotAbsent,

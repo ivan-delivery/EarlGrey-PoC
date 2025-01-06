@@ -49,7 +49,7 @@
  * @param domain      The error domain.
  * @param code        The error code.
  * @param description The error's localized description.
- * @param userInfi.    The error's userInfo.
+ * @param userInfo.    The error's userInfo.
  *
  * @return A @c GREYError object with the given input.
  */
@@ -96,12 +96,6 @@ GREY_EXTERN NSString *const kGREYGenericErrorDomain;
  * The code for a generic error in EarlGrey.
  */
 GREY_EXTERN NSInteger const kGREYGenericErrorCode;
-
-// TODO(albertbow): These are no longer utilized. If not needed, these can be removed.
-/**
- * Key used to retrieve the failure name from an error object for a failed action.
- */
-GREY_EXTERN NSString *const kErrorDetailFailureNameKey;
 
 /**
  * Key used to retrieve the action name from an error object for a failed action.
