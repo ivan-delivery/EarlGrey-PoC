@@ -47,9 +47,6 @@ xcodebuild -create-xcframework \
 
 echo "Finished AppFramework.xcframework"
 
-echo "Done."
-exit 0
-
 
 
 # --- Build TestLib ---
