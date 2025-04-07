@@ -30,6 +30,158 @@
 		76E0547D25817A050015F307 /* GREYErrorConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = FD6239B120F56C3D00049E81 /* GREYErrorConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A20847B422BC095B00DD3983 /* GREYTraversalObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A20847B322BC095A00DD3983 /* GREYTraversalObject.m */; };
 		A277771E238FE215003E7373 /* GREYTraversalProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A277771C238FE215003E7373 /* GREYTraversalProperties.m */; };
+		B80EEAA62D956E0D00C59DF9 /* EDODeviceChannel.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEAA52D956E0D00C59DF9 /* EDODeviceChannel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEAA82D956E1700C59DF9 /* EDODeviceConnector.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEAA72D956E1700C59DF9 /* EDODeviceConnector.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEAAA2D956E2B00C59DF9 /* EDODeviceDetector.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEAA92D956E2B00C59DF9 /* EDODeviceDetector.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEAAC2D956E3300C59DF9 /* EDOUSBMuxUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEAAB2D956E3300C59DF9 /* EDOUSBMuxUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEAAE2D956E3D00C59DF9 /* EDONumericMeasure.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEAAD2D956E3D00C59DF9 /* EDONumericMeasure.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEAB02D956E4E00C59DF9 /* EDOChannel.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEAAF2D956E4E00C59DF9 /* EDOChannel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEAB22D956E5500C59DF9 /* EDOHostPort.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEAB12D956E5500C59DF9 /* EDOHostPort.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEAB42D957F6000C59DF9 /* EDOBlockingQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEAB32D957F6000C59DF9 /* EDOBlockingQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEAB72D957F7100C59DF9 /* EDOChannelErrors.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEAB62D957F7000C59DF9 /* EDOChannelErrors.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEAB92D957F7700C59DF9 /* EDOChannelForwarder.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEAB82D957F7600C59DF9 /* EDOChannelForwarder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEABB2D957F7D00C59DF9 /* EDOChannelMultiplexer.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEABA2D957F7C00C59DF9 /* EDOChannelMultiplexer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEABD2D957F8200C59DF9 /* EDOChannelPool.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEABC2D957F8200C59DF9 /* EDOChannelPool.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEABF2D957F8600C59DF9 /* EDOChannelUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEABE2D957F8600C59DF9 /* EDOChannelUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEAC22D957F9200C59DF9 /* EDOListenSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEAC12D957F9100C59DF9 /* EDOListenSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEAC42D957F9600C59DF9 /* EDOSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEAC32D957F9600C59DF9 /* EDOSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEAC62D957F9B00C59DF9 /* EDOSocketChannel.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEAC52D957F9B00C59DF9 /* EDOSocketChannel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEAC82D957FA000C59DF9 /* EDOSocketPort.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEAC72D957F9F00C59DF9 /* EDOSocketPort.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEACA2D957FE200C59DF9 /* EDOBlockObject.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEAC92D957FE200C59DF9 /* EDOBlockObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEACC2D957FFB00C59DF9 /* EDOClassMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEACB2D957FFB00C59DF9 /* EDOClassMessage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEACE2D95800200C59DF9 /* EDOClientService.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEACD2D95800200C59DF9 /* EDOClientService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEAD02D95800A00C59DF9 /* EDOClientServiceStatsCollector.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEACF2D95800A00C59DF9 /* EDOClientServiceStatsCollector.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEAD22D95801300C59DF9 /* EDODeallocationTracker.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEAD12D95801300C59DF9 /* EDODeallocationTracker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEAD42D95801700C59DF9 /* EDOExecutor.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEAD32D95801700C59DF9 /* EDOExecutor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEAD62D95803E00C59DF9 /* EDOExecutorMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEAD52D95803E00C59DF9 /* EDOExecutorMessage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEAD82D95804C00C59DF9 /* EDOHostNamingService.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEAD72D95804B00C59DF9 /* EDOHostNamingService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEADA2D95805100C59DF9 /* EDOHostService.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEAD92D95805100C59DF9 /* EDOHostService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEADC2D95805500C59DF9 /* EDOHostService+Handlers.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEADB2D95805500C59DF9 /* EDOHostService+Handlers.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEADE2D95805900C59DF9 /* EDOInvocationMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEADD2D95805900C59DF9 /* EDOInvocationMessage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEAE02D95805D00C59DF9 /* EDOMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEADF2D95805D00C59DF9 /* EDOMessage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEAE22D95806000C59DF9 /* EDOMethodSignatureMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEAE12D95806000C59DF9 /* EDOMethodSignatureMessage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEAE42D95806200C59DF9 /* EDOObject.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEAE32D95806200C59DF9 /* EDOObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEAE62D95806800C59DF9 /* EDOObjectAliveMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEAE52D95806800C59DF9 /* EDOObjectAliveMessage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEAE82D95806D00C59DF9 /* EDOObjectMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEAE72D95806D00C59DF9 /* EDOObjectMessage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEAEA2D95807000C59DF9 /* EDOObjectReleaseMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEAE92D95806F00C59DF9 /* EDOObjectReleaseMessage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEAEC2D95807200C59DF9 /* EDOParameter.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEAEB2D95807200C59DF9 /* EDOParameter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEAEE2D95807600C59DF9 /* EDOProtocolObject.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEAED2D95807600C59DF9 /* EDOProtocolObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEAF02D95807B00C59DF9 /* EDORemoteException.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEAEF2D95807B00C59DF9 /* EDORemoteException.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEAF22D95807E00C59DF9 /* EDORemoteVariable.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEAF12D95807E00C59DF9 /* EDORemoteVariable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEAF42D95808200C59DF9 /* EDORuntimeUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEAF32D95808200C59DF9 /* EDORuntimeUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEAF82D9580D800C59DF9 /* EDOServiceError.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEAF72D9580D700C59DF9 /* EDOServiceError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEAFA2D9580DD00C59DF9 /* EDOServiceException.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEAF92D9580DD00C59DF9 /* EDOServiceException.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEAFC2D9580E200C59DF9 /* EDOServicePort.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEAFB2D9580E200C59DF9 /* EDOServicePort.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEAFE2D9580E500C59DF9 /* EDOServiceRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEAFD2D9580E500C59DF9 /* EDOServiceRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB002D9580EA00C59DF9 /* EDOTimingFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEAFF2D9580EA00C59DF9 /* EDOTimingFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB042D95816100C59DF9 /* EDOValueObject.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEB032D95816100C59DF9 /* EDOValueObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB062D95816700C59DF9 /* EDOWeakObject.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEB052D95816700C59DF9 /* EDOWeakObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB082D95817000C59DF9 /* NSKeyedArchiver+EDOAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEB072D95816F00C59DF9 /* NSKeyedArchiver+EDOAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB0A2D95817600C59DF9 /* NSKeyedUnarchiver+EDOAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEB092D95817600C59DF9 /* NSKeyedUnarchiver+EDOAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB0D2D95818600C59DF9 /* NSObject+EDOBlockedType.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEB0C2D95818600C59DF9 /* NSObject+EDOBlockedType.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB0F2D95818C00C59DF9 /* NSObject+EDOParameter.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEB0E2D95818C00C59DF9 /* NSObject+EDOParameter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB112D95819400C59DF9 /* NSObject+EDOValue.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEB102D95819300C59DF9 /* NSObject+EDOValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB132D95819A00C59DF9 /* NSObject+EDOValueObject.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEB122D95819A00C59DF9 /* NSObject+EDOValueObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB152D95819F00C59DF9 /* NSObject+EDOWeakObject.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEB142D95819E00C59DF9 /* NSObject+EDOWeakObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB172D9581A200C59DF9 /* NSProxy+EDOParameter.h in Headers */ = {isa = PBXBuildFile; fileRef = B80EEB162D9581A200C59DF9 /* NSProxy+EDOParameter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB252D9582C100C59DF9 /* GREYInterposer.h in Headers */ = {isa = PBXBuildFile; fileRef = 76C023AD288A0E4800BDEED5 /* GREYInterposer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB262D9582C500C59DF9 /* GREYDispatchQueueInterposer.h in Headers */ = {isa = PBXBuildFile; fileRef = FDF62DB825CD656C006F48BE /* GREYDispatchQueueInterposer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB272D9582C900C59DF9 /* GREYDiagnosable.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F9B2C1E22B18F15003132B0 /* GREYDiagnosable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB282D9582CD00C59DF9 /* GREYAppleInternals.h in Headers */ = {isa = PBXBuildFile; fileRef = FD6239D520F56C9400049E81 /* GREYAppleInternals.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB292D9582CF00C59DF9 /* GREYConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = FD6239DF20F56C9500049E81 /* GREYConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB2A2D9582D100C59DF9 /* GREYDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = FD6239D920F56C9400049E81 /* GREYDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB2B2D9582D400C59DF9 /* GREYLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = FD6239DC20F56C9400049E81 /* GREYLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB2C2D9582D600C59DF9 /* GREYObjcRuntime.h in Headers */ = {isa = PBXBuildFile; fileRef = FD6239DD20F56C9400049E81 /* GREYObjcRuntime.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB2D2D9582D800C59DF9 /* GREYSetup.h in Headers */ = {isa = PBXBuildFile; fileRef = FD82C56B27EAA18400A040D6 /* GREYSetup.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB2E2D9582DB00C59DF9 /* GREYStopwatch.h in Headers */ = {isa = PBXBuildFile; fileRef = FD6239D820F56C9400049E81 /* GREYStopwatch.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB2F2D9582DD00C59DF9 /* GREYSwizzler.h in Headers */ = {isa = PBXBuildFile; fileRef = FD6239D720F56C9400049E81 /* GREYSwizzler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB302D9582E900C59DF9 /* GREYDescribeVariable.h in Headers */ = {isa = PBXBuildFile; fileRef = 7681E45028F60477007BCE7A /* GREYDescribeVariable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB312D9582EC00C59DF9 /* GREYAssertion.h in Headers */ = {isa = PBXBuildFile; fileRef = FD3A824E21F187C700CA3ADF /* GREYAssertion.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB322D9582EE00C59DF9 /* GREYAssertionBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = FD3A824F21F187C700CA3ADF /* GREYAssertionBlock.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB332D9582FE00C59DF9 /* GREYProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = FD6239D420F56C8900049E81 /* GREYProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB342D95830100C59DF9 /* GREYBaseMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = FD3A825521F187FC00CA3ADF /* GREYBaseMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB352D95830400C59DF9 /* GREYElementMatcherBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = FD3A825421F187FB00CA3ADF /* GREYElementMatcherBlock.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB362D95830600C59DF9 /* GREYDescription.h in Headers */ = {isa = PBXBuildFile; fileRef = FD6239CF20F56C7100049E81 /* GREYDescription.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB372D95830700C59DF9 /* GREYLayoutConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = FD6239D020F56C7100049E81 /* GREYLayoutConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB382D95830900C59DF9 /* GREYMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = FD6239CD20F56C7100049E81 /* GREYMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB392D95830B00C59DF9 /* GREYStringDescription.h in Headers */ = {isa = PBXBuildFile; fileRef = FD6239CB20F56C7100049E81 /* GREYStringDescription.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB3A2D95830F00C59DF9 /* GREYFailureHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = FD6239C820F56C5E00049E81 /* GREYFailureHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB3B2D95831100C59DF9 /* GREYFrameworkException.h in Headers */ = {isa = PBXBuildFile; fileRef = FD6239C720F56C5E00049E81 /* GREYFrameworkException.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB3C2D95831600C59DF9 /* GREYTouchInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = FD6239C120F56C4D00049E81 /* GREYTouchInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB3D2D95831800C59DF9 /* GREYTouchPathObject.h in Headers */ = {isa = PBXBuildFile; fileRef = FD6239C220F56C4D00049E81 /* GREYTouchPathObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB3E2D95831D00C59DF9 /* GREYErrorFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = FD1B7E3824A2806400400025 /* GREYErrorFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB3F2D95831F00C59DF9 /* GREYError.h in Headers */ = {isa = PBXBuildFile; fileRef = FD6239B520F56C3D00049E81 /* GREYError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB402D95832200C59DF9 /* GREYErrorConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = FD6239B120F56C3D00049E81 /* GREYErrorConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB412D95832400C59DF9 /* GREYObjectFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = FD6239B320F56C3D00049E81 /* GREYObjectFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB422D95832700C59DF9 /* NSError+GREYCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = FD6239B620F56C3D00049E81 /* NSError+GREYCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB432D95833000C59DF9 /* GREYDistantObjectUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 763D87B02513F3F1001B5731 /* GREYDistantObjectUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB442D95833700C59DF9 /* GREYHostApplicationDistantObject.h in Headers */ = {isa = PBXBuildFile; fileRef = FD6239AA20F56C2500049E81 /* GREYHostApplicationDistantObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB452D95833900C59DF9 /* GREYHostBackgroundDistantObject.h in Headers */ = {isa = PBXBuildFile; fileRef = FD6239AC20F56C2500049E81 /* GREYHostBackgroundDistantObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB462D95833B00C59DF9 /* GREYTestApplicationDistantObject.h in Headers */ = {isa = PBXBuildFile; fileRef = FD6239AB20F56C2500049E81 /* GREYTestApplicationDistantObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB472D95834300C59DF9 /* GREYFatalAsserts.h in Headers */ = {isa = PBXBuildFile; fileRef = FD62399320F56BC200049E81 /* GREYFatalAsserts.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB482D95834500C59DF9 /* GREYThrowDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = FD62399420F56BC200049E81 /* GREYThrowDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB492D95834900C59DF9 /* NSFileManager+GREYCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = FD98C45B226C2E00006F8D68 /* NSFileManager+GREYCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB4A2D95834B00C59DF9 /* NSObject+GREYCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = FD62398720F56B7600049E81 /* NSObject+GREYCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB4B2D95834D00C59DF9 /* UIView+GREYCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = FD62398620F56B7600049E81 /* UIView+GREYCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB4C2D95835200C59DF9 /* GREYAppState.h in Headers */ = {isa = PBXBuildFile; fileRef = FD6239A320F56BE700049E81 /* GREYAppState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB4D2D95835400C59DF9 /* GREYConfigKey.h in Headers */ = {isa = PBXBuildFile; fileRef = FD62399C20F56BE700049E81 /* GREYConfigKey.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EEB4E2D95835600C59DF9 /* GREYConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = FD6239A220F56BE700049E81 /* GREYConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF9532D95AA6F00C59DF9 /* GREYInteraction.h in Headers */ = {isa = PBXBuildFile; fileRef = FD623AF420F9594100049E81 /* GREYInteraction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF9622D96DE7200C59DF9 /* GREYAppConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = FD2E76EB2149E4580063EF7E /* GREYAppConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF9632D96DE8400C59DF9 /* GREYAllOf.h in Headers */ = {isa = PBXBuildFile; fileRef = FD623B6220F95B0300049E81 /* GREYAllOf.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF9642D96DE8700C59DF9 /* GREYMatcherUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = FD27DFFF26F5442B0074018B /* GREYMatcherUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF9652D96DE8900C59DF9 /* GREYVisibilityMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = FD27DFFC26F5442B0074018B /* GREYVisibilityMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF9662D96DE8C00C59DF9 /* GREYAnyOf.h in Headers */ = {isa = PBXBuildFile; fileRef = FD623B6320F95B0300049E81 /* GREYAnyOf.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF9672D96DE8E00C59DF9 /* GREYMatchers.h in Headers */ = {isa = PBXBuildFile; fileRef = FD623B5620F95B0200049E81 /* GREYMatchers.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF9682D96DE9000C59DF9 /* GREYMatchersShorthand.h in Headers */ = {isa = PBXBuildFile; fileRef = FD623B6120F95B0300049E81 /* GREYMatchersShorthand.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF9692D96DEA000C59DF9 /* GREYKeyboard.h in Headers */ = {isa = PBXBuildFile; fileRef = FD623B5120F95AF300049E81 /* GREYKeyboard.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF96A2D96DEA600C59DF9 /* GREYIdlingResource.h in Headers */ = {isa = PBXBuildFile; fileRef = FD623B3E20F95A9C00049E81 /* GREYIdlingResource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF96B2D96DEB400C59DF9 /* GREYSyntheticEvents.h in Headers */ = {isa = PBXBuildFile; fileRef = FD623B2F20F95A8600049E81 /* GREYSyntheticEvents.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF96C2D96DEB600C59DF9 /* GREYTouchInjector.h in Headers */ = {isa = PBXBuildFile; fileRef = FD623B2E20F95A8600049E81 /* GREYTouchInjector.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF96D2D96DEBC00C59DF9 /* GREYIOHIDEventTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = FD623B2C20F95A8600049E81 /* GREYIOHIDEventTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF96E2D96DECF00C59DF9 /* GREYElementFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = FD41290C23D97C220042A585 /* GREYElementFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF96F2D96DED100C59DF9 /* GREYElementFinder.h in Headers */ = {isa = PBXBuildFile; fileRef = FD623AEF20F9594100049E81 /* GREYElementFinder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF9702D96DED300C59DF9 /* GREYElementInteraction.h in Headers */ = {isa = PBXBuildFile; fileRef = FD623AEE20F9594100049E81 /* GREYElementInteraction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF9712D96DED900C59DF9 /* GREYInteractionDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = FD623AF120F9594100049E81 /* GREYInteractionDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF9722D96DEDD00C59DF9 /* GREYAutomationSetup.h in Headers */ = {isa = PBXBuildFile; fileRef = FD623AE920F9592B00049E81 /* GREYAutomationSetup.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF9732D96DEE100C59DF9 /* GREYAssertions.h in Headers */ = {isa = PBXBuildFile; fileRef = FD623ADE20F9591600049E81 /* GREYAssertions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF9742D96DEF900C59DF9 /* GREYTwistAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 761CE8F3284F11130069A78F /* GREYTwistAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF9752D96DEFC00C59DF9 /* GREYActionsShorthand.h in Headers */ = {isa = PBXBuildFile; fileRef = FD3A825A21F189BC00CA3ADF /* GREYActionsShorthand.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF9762D96DEFE00C59DF9 /* GREYAction.h in Headers */ = {isa = PBXBuildFile; fileRef = FD623A5620F958C000049E81 /* GREYAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF9772D96DF0100C59DF9 /* GREYActionBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = FD623A6020F958C100049E81 /* GREYActionBlock.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF9782D96DF0400C59DF9 /* GREYActions.h in Headers */ = {isa = PBXBuildFile; fileRef = FD623A6B20F958C200049E81 /* GREYActions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF9792D96DF0600C59DF9 /* GREYBaseAction.h in Headers */ = {isa = PBXBuildFile; fileRef = FD623A6720F958C100049E81 /* GREYBaseAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF97A2D96DF0900C59DF9 /* GREYChangeStepperAction.h in Headers */ = {isa = PBXBuildFile; fileRef = FD623A6420F958C100049E81 /* GREYChangeStepperAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF97B2D96DF0C00C59DF9 /* GREYMultiFingerSwipeAction.h in Headers */ = {isa = PBXBuildFile; fileRef = FD623A5A20F958C000049E81 /* GREYMultiFingerSwipeAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF97C2D96DF0F00C59DF9 /* GREYPathGestureUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = FD623A6F20F958C200049E81 /* GREYPathGestureUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF97D2D96DF1100C59DF9 /* GREYPickerAction.h in Headers */ = {isa = PBXBuildFile; fileRef = FD623A5F20F958C100049E81 /* GREYPickerAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF97E2D96DF1300C59DF9 /* GREYPinchAction.h in Headers */ = {isa = PBXBuildFile; fileRef = FD623A5820F958C000049E81 /* GREYPinchAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF97F2D96DF1500C59DF9 /* GREYScrollAction.h in Headers */ = {isa = PBXBuildFile; fileRef = FD623A5420F958C000049E81 /* GREYScrollAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF9802D96DF1800C59DF9 /* GREYScrollToContentEdgeAction.h in Headers */ = {isa = PBXBuildFile; fileRef = FD623A5920F958C000049E81 /* GREYScrollToContentEdgeAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF9812D96DF1A00C59DF9 /* GREYSlideAction.h in Headers */ = {isa = PBXBuildFile; fileRef = FD623A5C20F958C100049E81 /* GREYSlideAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF9822D96DF1C00C59DF9 /* GREYSwipeAction.h in Headers */ = {isa = PBXBuildFile; fileRef = FD623A6220F958C100049E81 /* GREYSwipeAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF9832D96DF1D00C59DF9 /* GREYTapAction.h in Headers */ = {isa = PBXBuildFile; fileRef = FD623A6A20F958C200049E81 /* GREYTapAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF9842D96DF1F00C59DF9 /* GREYTapper.h in Headers */ = {isa = PBXBuildFile; fileRef = FD623A6320F958C100049E81 /* GREYTapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF9852D96DF3400C59DF9 /* EarlGreyImpl+XCUIApplication.h in Headers */ = {isa = PBXBuildFile; fileRef = FD50492120FB239800261CBE /* EarlGreyImpl+XCUIApplication.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF9862D96DF3700C59DF9 /* GREYElementInteractionProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = FD50492720FB239800261CBE /* GREYElementInteractionProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF9872D96DF3800C59DF9 /* XCUIApplication+GREYTest.h in Headers */ = {isa = PBXBuildFile; fileRef = FD50492820FB239800261CBE /* XCUIApplication+GREYTest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF9882D96DF3D00C59DF9 /* GREYElementInteractionErrorHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = FD98C45F226C32FA006F8D68 /* GREYElementInteractionErrorHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF9892D96DF5000C59DF9 /* EarlGrey.h in Headers */ = {isa = PBXBuildFile; fileRef = FD50492920FB239900261CBE /* EarlGrey.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF98A2D96E0C700C59DF9 /* GREYHostBackgroundDistantObject+GREYApp.h in Headers */ = {isa = PBXBuildFile; fileRef = FD623B1020F95A5300049E81 /* GREYHostBackgroundDistantObject+GREYApp.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF98B2D96E0CC00C59DF9 /* GREYHostApplicationDistantObject+GREYTestHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = FD623B1320F95A5400049E81 /* GREYHostApplicationDistantObject+GREYTestHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF98C2D96E0F500C59DF9 /* GREYWaitFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = FDE8719B23241567007C5A5C /* GREYWaitFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF98D2D96E22A00C59DF9 /* GREYAssertionDefinesPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = FD62399520F56BC200049E81 /* GREYAssertionDefinesPrivate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF98E2D96F31A00C59DF9 /* XCTestCase+GREYSystemAlertHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = FD50490D20FB231A00261CBE /* XCTestCase+GREYSystemAlertHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF98F2D96F31C00C59DF9 /* XCTestCase+GREYTest.h in Headers */ = {isa = PBXBuildFile; fileRef = FD50493B20FB23E500261CBE /* XCTestCase+GREYTest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF9902D96F32300C59DF9 /* XCUIApplication+GREYEnvironment.h in Headers */ = {isa = PBXBuildFile; fileRef = FD1184CB212CEE72004CADC3 /* XCUIApplication+GREYEnvironment.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF9912D96F32500C59DF9 /* GREYTestCaseInvocation.h in Headers */ = {isa = PBXBuildFile; fileRef = FD50493A20FB23E500261CBE /* GREYTestCaseInvocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF9922D96F9B800C59DF9 /* GREYAssertionDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = FD50491620FB235D00261CBE /* GREYAssertionDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF9932D97236200C59DF9 /* GREYUIThreadExecutor+GREYApp.h in Headers */ = {isa = PBXBuildFile; fileRef = FDE5C4CF263887C90094E325 /* GREYUIThreadExecutor+GREYApp.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF9942D97244E00C59DF9 /* GREYUIThreadExecutor.h in Headers */ = {isa = PBXBuildFile; fileRef = FD623B7520F95B1400049E81 /* GREYUIThreadExecutor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF9952D9724B800C59DF9 /* GREYCondition.h in Headers */ = {isa = PBXBuildFile; fileRef = FD50491820FB237100261CBE /* GREYCondition.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF9962D97253C00C59DF9 /* GREYElementHierarchy.h in Headers */ = {isa = PBXBuildFile; fileRef = FDF9E06D20F82F020005DCF2 /* GREYElementHierarchy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF9972D97254800C59DF9 /* GREYScreenshotter.h in Headers */ = {isa = PBXBuildFile; fileRef = FD98C457226C2DCE006F8D68 /* GREYScreenshotter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B80EF9982D97255100C59DF9 /* GREYUILibUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 549DA72028E24A2B00A0AD84 /* GREYUILibUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FD1184D3212CEE72004CADC3 /* XCUIApplication+GREYEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1184D2212CEE72004CADC3 /* XCUIApplication+GREYEnvironment.m */; };
 		FD1575532579CC7B00EDBF48 /* GREYDefaultFailureHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1575522579CC7B00EDBF48 /* GREYDefaultFailureHandler.m */; };
 		FD1B7E3A24A2806500400025 /* GREYErrorFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1B7E3924A2806400400025 /* GREYErrorFormatter.m */; };
@@ -461,6 +613,79 @@
 		A20847B322BC095A00DD3983 /* GREYTraversalObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GREYTraversalObject.m; sourceTree = "<group>"; };
 		A277771C238FE215003E7373 /* GREYTraversalProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GREYTraversalProperties.m; sourceTree = "<group>"; };
 		A277771D238FE215003E7373 /* GREYTraversalProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GREYTraversalProperties.h; sourceTree = "<group>"; };
+		B80EEAA52D956E0D00C59DF9 /* EDODeviceChannel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDODeviceChannel.h; path = ../Submodules/eDistantObject/Device/Sources/EDODeviceChannel.h; sourceTree = "<group>"; };
+		B80EEAA72D956E1700C59DF9 /* EDODeviceConnector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDODeviceConnector.h; path = ../Submodules/eDistantObject/Device/Sources/EDODeviceConnector.h; sourceTree = "<group>"; };
+		B80EEAA92D956E2B00C59DF9 /* EDODeviceDetector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDODeviceDetector.h; path = ../Submodules/eDistantObject/Device/Sources/EDODeviceDetector.h; sourceTree = "<group>"; };
+		B80EEAAB2D956E3300C59DF9 /* EDOUSBMuxUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOUSBMuxUtil.h; path = ../Submodules/eDistantObject/Device/Sources/EDOUSBMuxUtil.h; sourceTree = "<group>"; };
+		B80EEAAD2D956E3D00C59DF9 /* EDONumericMeasure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDONumericMeasure.h; path = ../Submodules/eDistantObject/Measure/Sources/EDONumericMeasure.h; sourceTree = "<group>"; };
+		B80EEAAF2D956E4E00C59DF9 /* EDOChannel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOChannel.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOChannel.h; sourceTree = "<group>"; };
+		B80EEAB12D956E5500C59DF9 /* EDOHostPort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOHostPort.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOHostPort.h; sourceTree = "<group>"; };
+		B80EEAB32D957F6000C59DF9 /* EDOBlockingQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOBlockingQueue.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOBlockingQueue.h; sourceTree = "<group>"; };
+		B80EEAB52D957F6800C59DF9 /* EDOChannel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOChannel.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOChannel.h; sourceTree = "<group>"; };
+		B80EEAB62D957F7000C59DF9 /* EDOChannelErrors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOChannelErrors.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOChannelErrors.h; sourceTree = "<group>"; };
+		B80EEAB82D957F7600C59DF9 /* EDOChannelForwarder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOChannelForwarder.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOChannelForwarder.h; sourceTree = "<group>"; };
+		B80EEABA2D957F7C00C59DF9 /* EDOChannelMultiplexer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOChannelMultiplexer.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOChannelMultiplexer.h; sourceTree = "<group>"; };
+		B80EEABC2D957F8200C59DF9 /* EDOChannelPool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOChannelPool.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOChannelPool.h; sourceTree = "<group>"; };
+		B80EEABE2D957F8600C59DF9 /* EDOChannelUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOChannelUtil.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOChannelUtil.h; sourceTree = "<group>"; };
+		B80EEAC02D957F8B00C59DF9 /* EDOHostPort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOHostPort.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOHostPort.h; sourceTree = "<group>"; };
+		B80EEAC12D957F9100C59DF9 /* EDOListenSocket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOListenSocket.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOListenSocket.h; sourceTree = "<group>"; };
+		B80EEAC32D957F9600C59DF9 /* EDOSocket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOSocket.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOSocket.h; sourceTree = "<group>"; };
+		B80EEAC52D957F9B00C59DF9 /* EDOSocketChannel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOSocketChannel.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOSocketChannel.h; sourceTree = "<group>"; };
+		B80EEAC72D957F9F00C59DF9 /* EDOSocketPort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOSocketPort.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOSocketPort.h; sourceTree = "<group>"; };
+		B80EEAC92D957FE200C59DF9 /* EDOBlockObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOBlockObject.h; path = ../Submodules/eDistantObject/Service/Sources/EDOBlockObject.h; sourceTree = "<group>"; };
+		B80EEACB2D957FFB00C59DF9 /* EDOClassMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOClassMessage.h; path = ../Submodules/eDistantObject/Service/Sources/EDOClassMessage.h; sourceTree = "<group>"; };
+		B80EEACD2D95800200C59DF9 /* EDOClientService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOClientService.h; path = ../Submodules/eDistantObject/Service/Sources/EDOClientService.h; sourceTree = "<group>"; };
+		B80EEACF2D95800A00C59DF9 /* EDOClientServiceStatsCollector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOClientServiceStatsCollector.h; path = ../Submodules/eDistantObject/Service/Sources/EDOClientServiceStatsCollector.h; sourceTree = "<group>"; };
+		B80EEAD12D95801300C59DF9 /* EDODeallocationTracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDODeallocationTracker.h; path = ../Submodules/eDistantObject/Service/Sources/EDODeallocationTracker.h; sourceTree = "<group>"; };
+		B80EEAD32D95801700C59DF9 /* EDOExecutor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOExecutor.h; path = ../Submodules/eDistantObject/Service/Sources/EDOExecutor.h; sourceTree = "<group>"; };
+		B80EEAD52D95803E00C59DF9 /* EDOExecutorMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOExecutorMessage.h; path = ../Submodules/eDistantObject/Service/Sources/EDOExecutorMessage.h; sourceTree = "<group>"; };
+		B80EEAD72D95804B00C59DF9 /* EDOHostNamingService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOHostNamingService.h; path = ../Submodules/eDistantObject/Service/Sources/EDOHostNamingService.h; sourceTree = "<group>"; };
+		B80EEAD92D95805100C59DF9 /* EDOHostService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOHostService.h; path = ../Submodules/eDistantObject/Service/Sources/EDOHostService.h; sourceTree = "<group>"; };
+		B80EEADB2D95805500C59DF9 /* EDOHostService+Handlers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "EDOHostService+Handlers.h"; path = "../Submodules/eDistantObject/Service/Sources/EDOHostService+Handlers.h"; sourceTree = "<group>"; };
+		B80EEADD2D95805900C59DF9 /* EDOInvocationMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOInvocationMessage.h; path = ../Submodules/eDistantObject/Service/Sources/EDOInvocationMessage.h; sourceTree = "<group>"; };
+		B80EEADF2D95805D00C59DF9 /* EDOMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOMessage.h; path = ../Submodules/eDistantObject/Service/Sources/EDOMessage.h; sourceTree = "<group>"; };
+		B80EEAE12D95806000C59DF9 /* EDOMethodSignatureMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOMethodSignatureMessage.h; path = ../Submodules/eDistantObject/Service/Sources/EDOMethodSignatureMessage.h; sourceTree = "<group>"; };
+		B80EEAE32D95806200C59DF9 /* EDOObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOObject.h; path = ../Submodules/eDistantObject/Service/Sources/EDOObject.h; sourceTree = "<group>"; };
+		B80EEAE52D95806800C59DF9 /* EDOObjectAliveMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOObjectAliveMessage.h; path = ../Submodules/eDistantObject/Service/Sources/EDOObjectAliveMessage.h; sourceTree = "<group>"; };
+		B80EEAE72D95806D00C59DF9 /* EDOObjectMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOObjectMessage.h; path = ../Submodules/eDistantObject/Service/Sources/EDOObjectMessage.h; sourceTree = "<group>"; };
+		B80EEAE92D95806F00C59DF9 /* EDOObjectReleaseMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOObjectReleaseMessage.h; path = ../Submodules/eDistantObject/Service/Sources/EDOObjectReleaseMessage.h; sourceTree = "<group>"; };
+		B80EEAEB2D95807200C59DF9 /* EDOParameter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOParameter.h; path = ../Submodules/eDistantObject/Service/Sources/EDOParameter.h; sourceTree = "<group>"; };
+		B80EEAED2D95807600C59DF9 /* EDOProtocolObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOProtocolObject.h; path = ../Submodules/eDistantObject/Service/Sources/EDOProtocolObject.h; sourceTree = "<group>"; };
+		B80EEAEF2D95807B00C59DF9 /* EDORemoteException.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDORemoteException.h; path = ../Submodules/eDistantObject/Service/Sources/EDORemoteException.h; sourceTree = "<group>"; };
+		B80EEAF12D95807E00C59DF9 /* EDORemoteVariable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDORemoteVariable.h; path = ../Submodules/eDistantObject/Service/Sources/EDORemoteVariable.h; sourceTree = "<group>"; };
+		B80EEAF32D95808200C59DF9 /* EDORuntimeUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDORuntimeUtils.h; path = ../Submodules/eDistantObject/Service/Sources/EDORuntimeUtils.h; sourceTree = "<group>"; };
+		B80EEAF52D9580BE00C59DF9 /* EDORemoteException.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDORemoteException.h; path = ../Submodules/eDistantObject/Service/Sources/EDORemoteException.h; sourceTree = "<group>"; };
+		B80EEAF62D9580C300C59DF9 /* EDORuntimeUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDORuntimeUtils.h; path = ../Submodules/eDistantObject/Service/Sources/EDORuntimeUtils.h; sourceTree = "<group>"; };
+		B80EEAF72D9580D700C59DF9 /* EDOServiceError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOServiceError.h; path = ../Submodules/eDistantObject/Service/Sources/EDOServiceError.h; sourceTree = "<group>"; };
+		B80EEAF92D9580DD00C59DF9 /* EDOServiceException.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOServiceException.h; path = ../Submodules/eDistantObject/Service/Sources/EDOServiceException.h; sourceTree = "<group>"; };
+		B80EEAFB2D9580E200C59DF9 /* EDOServicePort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOServicePort.h; path = ../Submodules/eDistantObject/Service/Sources/EDOServicePort.h; sourceTree = "<group>"; };
+		B80EEAFD2D9580E500C59DF9 /* EDOServiceRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOServiceRequest.h; path = ../Submodules/eDistantObject/Service/Sources/EDOServiceRequest.h; sourceTree = "<group>"; };
+		B80EEAFF2D9580EA00C59DF9 /* EDOTimingFunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOTimingFunctions.h; path = ../Submodules/eDistantObject/Service/Sources/EDOTimingFunctions.h; sourceTree = "<group>"; };
+		B80EEB012D95815600C59DF9 /* EDOServiceRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOServiceRequest.h; path = ../Submodules/eDistantObject/Service/Sources/EDOServiceRequest.h; sourceTree = "<group>"; };
+		B80EEB022D95815C00C59DF9 /* EDOTimingFunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOTimingFunctions.h; path = ../Submodules/eDistantObject/Service/Sources/EDOTimingFunctions.h; sourceTree = "<group>"; };
+		B80EEB032D95816100C59DF9 /* EDOValueObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOValueObject.h; path = ../Submodules/eDistantObject/Service/Sources/EDOValueObject.h; sourceTree = "<group>"; };
+		B80EEB052D95816700C59DF9 /* EDOWeakObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOWeakObject.h; path = ../Submodules/eDistantObject/Service/Sources/EDOWeakObject.h; sourceTree = "<group>"; };
+		B80EEB072D95816F00C59DF9 /* NSKeyedArchiver+EDOAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSKeyedArchiver+EDOAdditions.h"; path = "../Submodules/eDistantObject/Service/Sources/NSKeyedArchiver+EDOAdditions.h"; sourceTree = "<group>"; };
+		B80EEB092D95817600C59DF9 /* NSKeyedUnarchiver+EDOAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSKeyedUnarchiver+EDOAdditions.h"; path = "../Submodules/eDistantObject/Service/Sources/NSKeyedUnarchiver+EDOAdditions.h"; sourceTree = "<group>"; };
+		B80EEB0B2D95818000C59DF9 /* NSKeyedUnarchiver+EDOAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSKeyedUnarchiver+EDOAdditions.h"; path = "../Submodules/eDistantObject/Service/Sources/NSKeyedUnarchiver+EDOAdditions.h"; sourceTree = "<group>"; };
+		B80EEB0C2D95818600C59DF9 /* NSObject+EDOBlockedType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSObject+EDOBlockedType.h"; path = "../Submodules/eDistantObject/Service/Sources/NSObject+EDOBlockedType.h"; sourceTree = "<group>"; };
+		B80EEB0E2D95818C00C59DF9 /* NSObject+EDOParameter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSObject+EDOParameter.h"; path = "../Submodules/eDistantObject/Service/Sources/NSObject+EDOParameter.h"; sourceTree = "<group>"; };
+		B80EEB102D95819300C59DF9 /* NSObject+EDOValue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSObject+EDOValue.h"; path = "../Submodules/eDistantObject/Service/Sources/NSObject+EDOValue.h"; sourceTree = "<group>"; };
+		B80EEB122D95819A00C59DF9 /* NSObject+EDOValueObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSObject+EDOValueObject.h"; path = "../Submodules/eDistantObject/Service/Sources/NSObject+EDOValueObject.h"; sourceTree = "<group>"; };
+		B80EEB142D95819E00C59DF9 /* NSObject+EDOWeakObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSObject+EDOWeakObject.h"; path = "../Submodules/eDistantObject/Service/Sources/NSObject+EDOWeakObject.h"; sourceTree = "<group>"; };
+		B80EEB162D9581A200C59DF9 /* NSProxy+EDOParameter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSProxy+EDOParameter.h"; path = "../Submodules/eDistantObject/Service/Sources/NSProxy+EDOParameter.h"; sourceTree = "<group>"; };
+		B80EEB192D9581DE00C59DF9 /* EDOBlockingQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOBlockingQueue.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOBlockingQueue.h; sourceTree = "<group>"; };
+		B80EEB1A2D9581E400C59DF9 /* EDOChannel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOChannel.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOChannel.h; sourceTree = "<group>"; };
+		B80EEB1B2D9581EA00C59DF9 /* EDOChannelErrors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOChannelErrors.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOChannelErrors.h; sourceTree = "<group>"; };
+		B80EEB1C2D9581F100C59DF9 /* EDOChannelForwarder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOChannelForwarder.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOChannelForwarder.h; sourceTree = "<group>"; };
+		B80EEB1D2D9581F500C59DF9 /* EDOChannelMultiplexer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOChannelMultiplexer.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOChannelMultiplexer.h; sourceTree = "<group>"; };
+		B80EEB1E2D9581F800C59DF9 /* EDOChannelPool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOChannelPool.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOChannelPool.h; sourceTree = "<group>"; };
+		B80EEB1F2D9581FB00C59DF9 /* EDOChannelUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOChannelUtil.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOChannelUtil.h; sourceTree = "<group>"; };
+		B80EEB202D9581FF00C59DF9 /* EDOHostPort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOHostPort.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOHostPort.h; sourceTree = "<group>"; };
+		B80EEB212D95820200C59DF9 /* EDOListenSocket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOListenSocket.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOListenSocket.h; sourceTree = "<group>"; };
+		B80EEB222D95820500C59DF9 /* EDOSocket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOSocket.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOSocket.h; sourceTree = "<group>"; };
+		B80EEB232D95820700C59DF9 /* EDOSocketChannel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOSocketChannel.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOSocketChannel.h; sourceTree = "<group>"; };
+		B80EEB242D95820B00C59DF9 /* EDOSocketPort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOSocketPort.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOSocketPort.h; sourceTree = "<group>"; };
 		FD1184CB212CEE72004CADC3 /* XCUIApplication+GREYEnvironment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "XCUIApplication+GREYEnvironment.h"; path = "XCTestCase/XCUIApplication+GREYEnvironment.h"; sourceTree = "<group>"; };
 		FD1184D2212CEE72004CADC3 /* XCUIApplication+GREYEnvironment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "XCUIApplication+GREYEnvironment.m"; path = "XCTestCase/XCUIApplication+GREYEnvironment.m"; sourceTree = "<group>"; };
 		FD1575512579CC7B00EDBF48 /* GREYDefaultFailureHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GREYDefaultFailureHandler.h; path = FailureHandler/GREYDefaultFailureHandler.h; sourceTree = "<group>"; };
@@ -800,6 +1025,86 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
+		B80EEB182D9581C400C59DF9 /* PublicHeaders */ = {
+			isa = PBXGroup;
+			children = (
+				B80EEB162D9581A200C59DF9 /* NSProxy+EDOParameter.h */,
+				B80EEB142D95819E00C59DF9 /* NSObject+EDOWeakObject.h */,
+				B80EEB122D95819A00C59DF9 /* NSObject+EDOValueObject.h */,
+				B80EEB102D95819300C59DF9 /* NSObject+EDOValue.h */,
+				B80EEB0E2D95818C00C59DF9 /* NSObject+EDOParameter.h */,
+				B80EEB0C2D95818600C59DF9 /* NSObject+EDOBlockedType.h */,
+				B80EEB092D95817600C59DF9 /* NSKeyedUnarchiver+EDOAdditions.h */,
+				B80EEB0B2D95818000C59DF9 /* NSKeyedUnarchiver+EDOAdditions.h */,
+				B80EEB072D95816F00C59DF9 /* NSKeyedArchiver+EDOAdditions.h */,
+				B80EEB052D95816700C59DF9 /* EDOWeakObject.h */,
+				B80EEB032D95816100C59DF9 /* EDOValueObject.h */,
+				B80EEB022D95815C00C59DF9 /* EDOTimingFunctions.h */,
+				B80EEB012D95815600C59DF9 /* EDOServiceRequest.h */,
+				B80EEAFF2D9580EA00C59DF9 /* EDOTimingFunctions.h */,
+				B80EEAFD2D9580E500C59DF9 /* EDOServiceRequest.h */,
+				B80EEAFB2D9580E200C59DF9 /* EDOServicePort.h */,
+				B80EEAF92D9580DD00C59DF9 /* EDOServiceException.h */,
+				B80EEAF72D9580D700C59DF9 /* EDOServiceError.h */,
+				B80EEAF62D9580C300C59DF9 /* EDORuntimeUtils.h */,
+				B80EEAF52D9580BE00C59DF9 /* EDORemoteException.h */,
+				B80EEAF32D95808200C59DF9 /* EDORuntimeUtils.h */,
+				B80EEAF12D95807E00C59DF9 /* EDORemoteVariable.h */,
+				B80EEAEF2D95807B00C59DF9 /* EDORemoteException.h */,
+				B80EEAED2D95807600C59DF9 /* EDOProtocolObject.h */,
+				B80EEAEB2D95807200C59DF9 /* EDOParameter.h */,
+				B80EEAE92D95806F00C59DF9 /* EDOObjectReleaseMessage.h */,
+				B80EEAE72D95806D00C59DF9 /* EDOObjectMessage.h */,
+				B80EEAE52D95806800C59DF9 /* EDOObjectAliveMessage.h */,
+				B80EEAE32D95806200C59DF9 /* EDOObject.h */,
+				B80EEAE12D95806000C59DF9 /* EDOMethodSignatureMessage.h */,
+				B80EEADF2D95805D00C59DF9 /* EDOMessage.h */,
+				B80EEADD2D95805900C59DF9 /* EDOInvocationMessage.h */,
+				B80EEADB2D95805500C59DF9 /* EDOHostService+Handlers.h */,
+				B80EEAD92D95805100C59DF9 /* EDOHostService.h */,
+				B80EEAD72D95804B00C59DF9 /* EDOHostNamingService.h */,
+				B80EEAD52D95803E00C59DF9 /* EDOExecutorMessage.h */,
+				B80EEAD32D95801700C59DF9 /* EDOExecutor.h */,
+				B80EEAD12D95801300C59DF9 /* EDODeallocationTracker.h */,
+				B80EEACF2D95800A00C59DF9 /* EDOClientServiceStatsCollector.h */,
+				B80EEACD2D95800200C59DF9 /* EDOClientService.h */,
+				B80EEACB2D957FFB00C59DF9 /* EDOClassMessage.h */,
+				B80EEAC92D957FE200C59DF9 /* EDOBlockObject.h */,
+				B80EEAC72D957F9F00C59DF9 /* EDOSocketPort.h */,
+				B80EEAC52D957F9B00C59DF9 /* EDOSocketChannel.h */,
+				B80EEAC32D957F9600C59DF9 /* EDOSocket.h */,
+				B80EEAC12D957F9100C59DF9 /* EDOListenSocket.h */,
+				B80EEAC02D957F8B00C59DF9 /* EDOHostPort.h */,
+				B80EEABE2D957F8600C59DF9 /* EDOChannelUtil.h */,
+				B80EEABC2D957F8200C59DF9 /* EDOChannelPool.h */,
+				B80EEABA2D957F7C00C59DF9 /* EDOChannelMultiplexer.h */,
+				B80EEAB82D957F7600C59DF9 /* EDOChannelForwarder.h */,
+				B80EEAB62D957F7000C59DF9 /* EDOChannelErrors.h */,
+				B80EEAB52D957F6800C59DF9 /* EDOChannel.h */,
+				B80EEAB32D957F6000C59DF9 /* EDOBlockingQueue.h */,
+				B80EEAB12D956E5500C59DF9 /* EDOHostPort.h */,
+				B80EEAAF2D956E4E00C59DF9 /* EDOChannel.h */,
+				B80EEAAD2D956E3D00C59DF9 /* EDONumericMeasure.h */,
+				B80EEAAB2D956E3300C59DF9 /* EDOUSBMuxUtil.h */,
+				B80EEAA92D956E2B00C59DF9 /* EDODeviceDetector.h */,
+				B80EEAA72D956E1700C59DF9 /* EDODeviceConnector.h */,
+				B80EEAA52D956E0D00C59DF9 /* EDODeviceChannel.h */,
+				B80EEB242D95820B00C59DF9 /* EDOSocketPort.h */,
+				B80EEB232D95820700C59DF9 /* EDOSocketChannel.h */,
+				B80EEB222D95820500C59DF9 /* EDOSocket.h */,
+				B80EEB212D95820200C59DF9 /* EDOListenSocket.h */,
+				B80EEB202D9581FF00C59DF9 /* EDOHostPort.h */,
+				B80EEB1F2D9581FB00C59DF9 /* EDOChannelUtil.h */,
+				B80EEB1E2D9581F800C59DF9 /* EDOChannelPool.h */,
+				B80EEB1D2D9581F500C59DF9 /* EDOChannelMultiplexer.h */,
+				B80EEB1C2D9581F100C59DF9 /* EDOChannelForwarder.h */,
+				B80EEB1B2D9581EA00C59DF9 /* EDOChannelErrors.h */,
+				B80EEB1A2D9581E400C59DF9 /* EDOChannel.h */,
+				B80EEB192D9581DE00C59DF9 /* EDOBlockingQueue.h */,
+			);
+			path = PublicHeaders;
+			sourceTree = "<group>";
+		};
 		FD15754F2579CC4600EDBF48 /* FailureHandler */ = {
 			isa = PBXGroup;
 			children = (
@@ -965,6 +1270,7 @@
 		FD62390820F569D500049E81 = {
 			isa = PBXGroup;
 			children = (
+				B80EEB182D9581C400C59DF9 /* PublicHeaders */,
 				FD27E00A26FBB5AC0074018B /* third_party */,
 				FD6239E420F56E6A00049E81 /* eDistantObject.xcodeproj */,
 				FD62399020F56B7D00049E81 /* CommonLib */,
@@ -1536,6 +1842,165 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		B80EEA9B2D956D4100C59DF9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B80EF98A2D96E0C700C59DF9 /* GREYHostBackgroundDistantObject+GREYApp.h in Headers */,
+				B80EF98D2D96E22A00C59DF9 /* GREYAssertionDefinesPrivate.h in Headers */,
+				B80EF9972D97254800C59DF9 /* GREYScreenshotter.h in Headers */,
+				B80EF9962D97253C00C59DF9 /* GREYElementHierarchy.h in Headers */,
+				B80EF9982D97255100C59DF9 /* GREYUILibUtils.h in Headers */,
+				B80EEB2A2D9582D100C59DF9 /* GREYDefines.h in Headers */,
+				B80EF9922D96F9B800C59DF9 /* GREYAssertionDefines.h in Headers */,
+				B80EF9932D97236200C59DF9 /* GREYUIThreadExecutor+GREYApp.h in Headers */,
+				B80EF9952D9724B800C59DF9 /* GREYCondition.h in Headers */,
+				B80EF98F2D96F31C00C59DF9 /* XCTestCase+GREYTest.h in Headers */,
+				B80EF9942D97244E00C59DF9 /* GREYUIThreadExecutor.h in Headers */,
+				B80EF9632D96DE8400C59DF9 /* GREYAllOf.h in Headers */,
+				B80EEB452D95833900C59DF9 /* GREYHostBackgroundDistantObject.h in Headers */,
+				B80EF9912D96F32500C59DF9 /* GREYTestCaseInvocation.h in Headers */,
+				B80EF98E2D96F31A00C59DF9 /* XCTestCase+GREYSystemAlertHandler.h in Headers */,
+				B80EF98C2D96E0F500C59DF9 /* GREYWaitFunctions.h in Headers */,
+				B80EEB3B2D95831100C59DF9 /* GREYFrameworkException.h in Headers */,
+				B80EF9902D96F32300C59DF9 /* XCUIApplication+GREYEnvironment.h in Headers */,
+				B80EEB442D95833700C59DF9 /* GREYHostApplicationDistantObject.h in Headers */,
+				B80EF98B2D96E0CC00C59DF9 /* GREYHostApplicationDistantObject+GREYTestHelper.h in Headers */,
+				B80EF9692D96DEA000C59DF9 /* GREYKeyboard.h in Headers */,
+				B80EF9622D96DE7200C59DF9 /* GREYAppConfiguration.h in Headers */,
+				B80EF9642D96DE8700C59DF9 /* GREYMatcherUtil.h in Headers */,
+				B80EF96D2D96DEBC00C59DF9 /* GREYIOHIDEventTypes.h in Headers */,
+				B80EF9892D96DF5000C59DF9 /* EarlGrey.h in Headers */,
+				B80EF9882D96DF3D00C59DF9 /* GREYElementInteractionErrorHandler.h in Headers */,
+				B80EF9652D96DE8900C59DF9 /* GREYVisibilityMatcher.h in Headers */,
+				B80EF96B2D96DEB400C59DF9 /* GREYSyntheticEvents.h in Headers */,
+				B80EF96E2D96DECF00C59DF9 /* GREYElementFilter.h in Headers */,
+				B80EF9852D96DF3400C59DF9 /* EarlGreyImpl+XCUIApplication.h in Headers */,
+				B80EF9742D96DEF900C59DF9 /* GREYTwistAction.h in Headers */,
+				B80EF9772D96DF0100C59DF9 /* GREYActionBlock.h in Headers */,
+				B80EF9872D96DF3800C59DF9 /* XCUIApplication+GREYTest.h in Headers */,
+				B80EF9862D96DF3700C59DF9 /* GREYElementInteractionProxy.h in Headers */,
+				B80EF9722D96DEDD00C59DF9 /* GREYAutomationSetup.h in Headers */,
+				B80EF9792D96DF0600C59DF9 /* GREYBaseAction.h in Headers */,
+				B80EF97C2D96DF0F00C59DF9 /* GREYPathGestureUtils.h in Headers */,
+				B80EF9812D96DF1A00C59DF9 /* GREYSlideAction.h in Headers */,
+				B80EF9802D96DF1800C59DF9 /* GREYScrollToContentEdgeAction.h in Headers */,
+				B80EF9822D96DF1C00C59DF9 /* GREYSwipeAction.h in Headers */,
+				B80EF9842D96DF1F00C59DF9 /* GREYTapper.h in Headers */,
+				B80EF97D2D96DF1100C59DF9 /* GREYPickerAction.h in Headers */,
+				B80EF9832D96DF1D00C59DF9 /* GREYTapAction.h in Headers */,
+				B80EF97A2D96DF0900C59DF9 /* GREYChangeStepperAction.h in Headers */,
+				B80EF97F2D96DF1500C59DF9 /* GREYScrollAction.h in Headers */,
+				B80EF97E2D96DF1300C59DF9 /* GREYPinchAction.h in Headers */,
+				B80EF9782D96DF0400C59DF9 /* GREYActions.h in Headers */,
+				B80EF9732D96DEE100C59DF9 /* GREYAssertions.h in Headers */,
+				B80EF9762D96DEFE00C59DF9 /* GREYAction.h in Headers */,
+				B80EF97B2D96DF0C00C59DF9 /* GREYMultiFingerSwipeAction.h in Headers */,
+				B80EF96F2D96DED100C59DF9 /* GREYElementFinder.h in Headers */,
+				B80EF9702D96DED300C59DF9 /* GREYElementInteraction.h in Headers */,
+				B80EF9752D96DEFC00C59DF9 /* GREYActionsShorthand.h in Headers */,
+				B80EF9532D95AA6F00C59DF9 /* GREYInteraction.h in Headers */,
+				B80EF96C2D96DEB600C59DF9 /* GREYTouchInjector.h in Headers */,
+				B80EF9712D96DED900C59DF9 /* GREYInteractionDataSource.h in Headers */,
+				B80EEB252D9582C100C59DF9 /* GREYInterposer.h in Headers */,
+				B80EF96A2D96DEA600C59DF9 /* GREYIdlingResource.h in Headers */,
+				B80EF9662D96DE8C00C59DF9 /* GREYAnyOf.h in Headers */,
+				B80EEAB72D957F7100C59DF9 /* EDOChannelErrors.h in Headers */,
+				B80EF9672D96DE8E00C59DF9 /* GREYMatchers.h in Headers */,
+				B80EF9682D96DE9000C59DF9 /* GREYMatchersShorthand.h in Headers */,
+				B80EEB262D9582C500C59DF9 /* GREYDispatchQueueInterposer.h in Headers */,
+				B80EEAB92D957F7700C59DF9 /* EDOChannelForwarder.h in Headers */,
+				B80EEB302D9582E900C59DF9 /* GREYDescribeVariable.h in Headers */,
+				B80EEB332D9582FE00C59DF9 /* GREYProvider.h in Headers */,
+				B80EEB492D95834900C59DF9 /* NSFileManager+GREYCommon.h in Headers */,
+				B80EEB4A2D95834B00C59DF9 /* NSObject+GREYCommon.h in Headers */,
+				B80EEB4C2D95835200C59DF9 /* GREYAppState.h in Headers */,
+				B80EEB4D2D95835400C59DF9 /* GREYConfigKey.h in Headers */,
+				B80EEB472D95834300C59DF9 /* GREYFatalAsserts.h in Headers */,
+				B80EEB4E2D95835600C59DF9 /* GREYConfiguration.h in Headers */,
+				B80EEB482D95834500C59DF9 /* GREYThrowDefines.h in Headers */,
+				B80EEB4B2D95834D00C59DF9 /* UIView+GREYCommon.h in Headers */,
+				B80EEB462D95833B00C59DF9 /* GREYTestApplicationDistantObject.h in Headers */,
+				B80EEB432D95833000C59DF9 /* GREYDistantObjectUtils.h in Headers */,
+				B80EEB342D95830100C59DF9 /* GREYBaseMatcher.h in Headers */,
+				B80EEAB02D956E4E00C59DF9 /* EDOChannel.h in Headers */,
+				B80EEB272D9582C900C59DF9 /* GREYDiagnosable.h in Headers */,
+				B80EEB402D95832200C59DF9 /* GREYErrorConstants.h in Headers */,
+				B80EEB412D95832400C59DF9 /* GREYObjectFormatter.h in Headers */,
+				B80EEB3C2D95831600C59DF9 /* GREYTouchInfo.h in Headers */,
+				B80EEB422D95832700C59DF9 /* NSError+GREYCommon.h in Headers */,
+				B80EEB3E2D95831D00C59DF9 /* GREYErrorFormatter.h in Headers */,
+				B80EEB3A2D95830F00C59DF9 /* GREYFailureHandler.h in Headers */,
+				B80EEB352D95830400C59DF9 /* GREYElementMatcherBlock.h in Headers */,
+				B80EEB3F2D95831F00C59DF9 /* GREYError.h in Headers */,
+				B80EEB3D2D95831800C59DF9 /* GREYTouchPathObject.h in Headers */,
+				B80EEB312D9582EC00C59DF9 /* GREYAssertion.h in Headers */,
+				B80EEB362D95830600C59DF9 /* GREYDescription.h in Headers */,
+				B80EEB292D9582CF00C59DF9 /* GREYConstants.h in Headers */,
+				B80EEB282D9582CD00C59DF9 /* GREYAppleInternals.h in Headers */,
+				B80EEB372D95830700C59DF9 /* GREYLayoutConstraint.h in Headers */,
+				B80EEB382D95830900C59DF9 /* GREYMatcher.h in Headers */,
+				B80EEB392D95830B00C59DF9 /* GREYStringDescription.h in Headers */,
+				B80EEB322D9582EE00C59DF9 /* GREYAssertionBlock.h in Headers */,
+				B80EEAB42D957F6000C59DF9 /* EDOBlockingQueue.h in Headers */,
+				B80EEACE2D95800200C59DF9 /* EDOClientService.h in Headers */,
+				B80EEACC2D957FFB00C59DF9 /* EDOClassMessage.h in Headers */,
+				B80EEACA2D957FE200C59DF9 /* EDOBlockObject.h in Headers */,
+				B80EEB2C2D9582D600C59DF9 /* GREYObjcRuntime.h in Headers */,
+				B80EEB2B2D9582D400C59DF9 /* GREYLogger.h in Headers */,
+				B80EEB2D2D9582D800C59DF9 /* GREYSetup.h in Headers */,
+				B80EEAF82D9580D800C59DF9 /* EDOServiceError.h in Headers */,
+				B80EEB2E2D9582DB00C59DF9 /* GREYStopwatch.h in Headers */,
+				B80EEB2F2D9582DD00C59DF9 /* GREYSwizzler.h in Headers */,
+				B80EEABB2D957F7D00C59DF9 /* EDOChannelMultiplexer.h in Headers */,
+				B80EEAB22D956E5500C59DF9 /* EDOHostPort.h in Headers */,
+				B80EEAC22D957F9200C59DF9 /* EDOListenSocket.h in Headers */,
+				B80EEAFA2D9580DD00C59DF9 /* EDOServiceException.h in Headers */,
+				B80EEAC42D957F9600C59DF9 /* EDOSocket.h in Headers */,
+				B80EEAFC2D9580E200C59DF9 /* EDOServicePort.h in Headers */,
+				B80EEABF2D957F8600C59DF9 /* EDOChannelUtil.h in Headers */,
+				B80EEAC62D957F9B00C59DF9 /* EDOSocketChannel.h in Headers */,
+				B80EEABD2D957F8200C59DF9 /* EDOChannelPool.h in Headers */,
+				B80EEAD62D95803E00C59DF9 /* EDOExecutorMessage.h in Headers */,
+				B80EEAFE2D9580E500C59DF9 /* EDOServiceRequest.h in Headers */,
+				B80EEAC82D957FA000C59DF9 /* EDOSocketPort.h in Headers */,
+				B80EEB0A2D95817600C59DF9 /* NSKeyedUnarchiver+EDOAdditions.h in Headers */,
+				B80EEB0F2D95818C00C59DF9 /* NSObject+EDOParameter.h in Headers */,
+				B80EEB042D95816100C59DF9 /* EDOValueObject.h in Headers */,
+				B80EEB152D95819F00C59DF9 /* NSObject+EDOWeakObject.h in Headers */,
+				B80EEB172D9581A200C59DF9 /* NSProxy+EDOParameter.h in Headers */,
+				B80EEB112D95819400C59DF9 /* NSObject+EDOValue.h in Headers */,
+				B80EEB082D95817000C59DF9 /* NSKeyedArchiver+EDOAdditions.h in Headers */,
+				B80EEB132D95819A00C59DF9 /* NSObject+EDOValueObject.h in Headers */,
+				B80EEB0D2D95818600C59DF9 /* NSObject+EDOBlockedType.h in Headers */,
+				B80EEB062D95816700C59DF9 /* EDOWeakObject.h in Headers */,
+				B80EEAD02D95800A00C59DF9 /* EDOClientServiceStatsCollector.h in Headers */,
+				B80EEB002D9580EA00C59DF9 /* EDOTimingFunctions.h in Headers */,
+				B80EEAD42D95801700C59DF9 /* EDOExecutor.h in Headers */,
+				B80EEAF02D95807B00C59DF9 /* EDORemoteException.h in Headers */,
+				B80EEAEE2D95807600C59DF9 /* EDOProtocolObject.h in Headers */,
+				B80EEAE02D95805D00C59DF9 /* EDOMessage.h in Headers */,
+				B80EEAF42D95808200C59DF9 /* EDORuntimeUtils.h in Headers */,
+				B80EEAE62D95806800C59DF9 /* EDOObjectAliveMessage.h in Headers */,
+				B80EEAF22D95807E00C59DF9 /* EDORemoteVariable.h in Headers */,
+				B80EEAE22D95806000C59DF9 /* EDOMethodSignatureMessage.h in Headers */,
+				B80EEAE82D95806D00C59DF9 /* EDOObjectMessage.h in Headers */,
+				B80EEAEA2D95807000C59DF9 /* EDOObjectReleaseMessage.h in Headers */,
+				B80EEAEC2D95807200C59DF9 /* EDOParameter.h in Headers */,
+				B80EEADA2D95805100C59DF9 /* EDOHostService.h in Headers */,
+				B80EEAE42D95806200C59DF9 /* EDOObject.h in Headers */,
+				B80EEADC2D95805500C59DF9 /* EDOHostService+Handlers.h in Headers */,
+				B80EEAD82D95804C00C59DF9 /* EDOHostNamingService.h in Headers */,
+				B80EEADE2D95805900C59DF9 /* EDOInvocationMessage.h in Headers */,
+				B80EEAD22D95801300C59DF9 /* EDODeallocationTracker.h in Headers */,
+				B80EEAAE2D956E3D00C59DF9 /* EDONumericMeasure.h in Headers */,
+				B80EEAA62D956E0D00C59DF9 /* EDODeviceChannel.h in Headers */,
+				B80EEAA82D956E1700C59DF9 /* EDODeviceConnector.h in Headers */,
+				B80EEAAA2D956E2B00C59DF9 /* EDODeviceDetector.h in Headers */,
+				B80EEAAC2D956E3300C59DF9 /* EDOUSBMuxUtil.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FD623A4620F957BE00049E81 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -1637,6 +2102,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FD50490720FB225100261CBE /* Build configuration list for PBXNativeTarget "TestLib" */;
 			buildPhases = (
+				B80EEA9B2D956D4100C59DF9 /* Headers */,
 				FD5048F420FB225100261CBE /* Sources */,
 				FD5048F520FB225100261CBE /* Frameworks */,
 				FD5048F620FB225100261CBE /* CopyFiles */,
