@@ -613,79 +613,79 @@
 		A20847B322BC095A00DD3983 /* GREYTraversalObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GREYTraversalObject.m; sourceTree = "<group>"; };
 		A277771C238FE215003E7373 /* GREYTraversalProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GREYTraversalProperties.m; sourceTree = "<group>"; };
 		A277771D238FE215003E7373 /* GREYTraversalProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GREYTraversalProperties.h; sourceTree = "<group>"; };
-		B80EEAA52D956E0D00C59DF9 /* EDODeviceChannel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDODeviceChannel.h; path = ../Submodules/eDistantObject/Device/Sources/EDODeviceChannel.h; sourceTree = "<group>"; };
-		B80EEAA72D956E1700C59DF9 /* EDODeviceConnector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDODeviceConnector.h; path = ../Submodules/eDistantObject/Device/Sources/EDODeviceConnector.h; sourceTree = "<group>"; };
-		B80EEAA92D956E2B00C59DF9 /* EDODeviceDetector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDODeviceDetector.h; path = ../Submodules/eDistantObject/Device/Sources/EDODeviceDetector.h; sourceTree = "<group>"; };
-		B80EEAAB2D956E3300C59DF9 /* EDOUSBMuxUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOUSBMuxUtil.h; path = ../Submodules/eDistantObject/Device/Sources/EDOUSBMuxUtil.h; sourceTree = "<group>"; };
-		B80EEAAD2D956E3D00C59DF9 /* EDONumericMeasure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDONumericMeasure.h; path = ../Submodules/eDistantObject/Measure/Sources/EDONumericMeasure.h; sourceTree = "<group>"; };
-		B80EEAAF2D956E4E00C59DF9 /* EDOChannel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOChannel.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOChannel.h; sourceTree = "<group>"; };
-		B80EEAB12D956E5500C59DF9 /* EDOHostPort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOHostPort.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOHostPort.h; sourceTree = "<group>"; };
-		B80EEAB32D957F6000C59DF9 /* EDOBlockingQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOBlockingQueue.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOBlockingQueue.h; sourceTree = "<group>"; };
-		B80EEAB52D957F6800C59DF9 /* EDOChannel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOChannel.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOChannel.h; sourceTree = "<group>"; };
-		B80EEAB62D957F7000C59DF9 /* EDOChannelErrors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOChannelErrors.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOChannelErrors.h; sourceTree = "<group>"; };
-		B80EEAB82D957F7600C59DF9 /* EDOChannelForwarder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOChannelForwarder.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOChannelForwarder.h; sourceTree = "<group>"; };
-		B80EEABA2D957F7C00C59DF9 /* EDOChannelMultiplexer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOChannelMultiplexer.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOChannelMultiplexer.h; sourceTree = "<group>"; };
-		B80EEABC2D957F8200C59DF9 /* EDOChannelPool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOChannelPool.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOChannelPool.h; sourceTree = "<group>"; };
-		B80EEABE2D957F8600C59DF9 /* EDOChannelUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOChannelUtil.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOChannelUtil.h; sourceTree = "<group>"; };
-		B80EEAC02D957F8B00C59DF9 /* EDOHostPort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOHostPort.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOHostPort.h; sourceTree = "<group>"; };
-		B80EEAC12D957F9100C59DF9 /* EDOListenSocket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOListenSocket.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOListenSocket.h; sourceTree = "<group>"; };
-		B80EEAC32D957F9600C59DF9 /* EDOSocket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOSocket.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOSocket.h; sourceTree = "<group>"; };
-		B80EEAC52D957F9B00C59DF9 /* EDOSocketChannel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOSocketChannel.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOSocketChannel.h; sourceTree = "<group>"; };
-		B80EEAC72D957F9F00C59DF9 /* EDOSocketPort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOSocketPort.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOSocketPort.h; sourceTree = "<group>"; };
-		B80EEAC92D957FE200C59DF9 /* EDOBlockObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOBlockObject.h; path = ../Submodules/eDistantObject/Service/Sources/EDOBlockObject.h; sourceTree = "<group>"; };
-		B80EEACB2D957FFB00C59DF9 /* EDOClassMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOClassMessage.h; path = ../Submodules/eDistantObject/Service/Sources/EDOClassMessage.h; sourceTree = "<group>"; };
-		B80EEACD2D95800200C59DF9 /* EDOClientService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOClientService.h; path = ../Submodules/eDistantObject/Service/Sources/EDOClientService.h; sourceTree = "<group>"; };
-		B80EEACF2D95800A00C59DF9 /* EDOClientServiceStatsCollector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOClientServiceStatsCollector.h; path = ../Submodules/eDistantObject/Service/Sources/EDOClientServiceStatsCollector.h; sourceTree = "<group>"; };
-		B80EEAD12D95801300C59DF9 /* EDODeallocationTracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDODeallocationTracker.h; path = ../Submodules/eDistantObject/Service/Sources/EDODeallocationTracker.h; sourceTree = "<group>"; };
-		B80EEAD32D95801700C59DF9 /* EDOExecutor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOExecutor.h; path = ../Submodules/eDistantObject/Service/Sources/EDOExecutor.h; sourceTree = "<group>"; };
-		B80EEAD52D95803E00C59DF9 /* EDOExecutorMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOExecutorMessage.h; path = ../Submodules/eDistantObject/Service/Sources/EDOExecutorMessage.h; sourceTree = "<group>"; };
-		B80EEAD72D95804B00C59DF9 /* EDOHostNamingService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOHostNamingService.h; path = ../Submodules/eDistantObject/Service/Sources/EDOHostNamingService.h; sourceTree = "<group>"; };
-		B80EEAD92D95805100C59DF9 /* EDOHostService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOHostService.h; path = ../Submodules/eDistantObject/Service/Sources/EDOHostService.h; sourceTree = "<group>"; };
-		B80EEADB2D95805500C59DF9 /* EDOHostService+Handlers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "EDOHostService+Handlers.h"; path = "../Submodules/eDistantObject/Service/Sources/EDOHostService+Handlers.h"; sourceTree = "<group>"; };
-		B80EEADD2D95805900C59DF9 /* EDOInvocationMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOInvocationMessage.h; path = ../Submodules/eDistantObject/Service/Sources/EDOInvocationMessage.h; sourceTree = "<group>"; };
-		B80EEADF2D95805D00C59DF9 /* EDOMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOMessage.h; path = ../Submodules/eDistantObject/Service/Sources/EDOMessage.h; sourceTree = "<group>"; };
-		B80EEAE12D95806000C59DF9 /* EDOMethodSignatureMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOMethodSignatureMessage.h; path = ../Submodules/eDistantObject/Service/Sources/EDOMethodSignatureMessage.h; sourceTree = "<group>"; };
-		B80EEAE32D95806200C59DF9 /* EDOObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOObject.h; path = ../Submodules/eDistantObject/Service/Sources/EDOObject.h; sourceTree = "<group>"; };
-		B80EEAE52D95806800C59DF9 /* EDOObjectAliveMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOObjectAliveMessage.h; path = ../Submodules/eDistantObject/Service/Sources/EDOObjectAliveMessage.h; sourceTree = "<group>"; };
-		B80EEAE72D95806D00C59DF9 /* EDOObjectMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOObjectMessage.h; path = ../Submodules/eDistantObject/Service/Sources/EDOObjectMessage.h; sourceTree = "<group>"; };
-		B80EEAE92D95806F00C59DF9 /* EDOObjectReleaseMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOObjectReleaseMessage.h; path = ../Submodules/eDistantObject/Service/Sources/EDOObjectReleaseMessage.h; sourceTree = "<group>"; };
-		B80EEAEB2D95807200C59DF9 /* EDOParameter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOParameter.h; path = ../Submodules/eDistantObject/Service/Sources/EDOParameter.h; sourceTree = "<group>"; };
-		B80EEAED2D95807600C59DF9 /* EDOProtocolObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOProtocolObject.h; path = ../Submodules/eDistantObject/Service/Sources/EDOProtocolObject.h; sourceTree = "<group>"; };
-		B80EEAEF2D95807B00C59DF9 /* EDORemoteException.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDORemoteException.h; path = ../Submodules/eDistantObject/Service/Sources/EDORemoteException.h; sourceTree = "<group>"; };
-		B80EEAF12D95807E00C59DF9 /* EDORemoteVariable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDORemoteVariable.h; path = ../Submodules/eDistantObject/Service/Sources/EDORemoteVariable.h; sourceTree = "<group>"; };
-		B80EEAF32D95808200C59DF9 /* EDORuntimeUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDORuntimeUtils.h; path = ../Submodules/eDistantObject/Service/Sources/EDORuntimeUtils.h; sourceTree = "<group>"; };
-		B80EEAF52D9580BE00C59DF9 /* EDORemoteException.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDORemoteException.h; path = ../Submodules/eDistantObject/Service/Sources/EDORemoteException.h; sourceTree = "<group>"; };
-		B80EEAF62D9580C300C59DF9 /* EDORuntimeUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDORuntimeUtils.h; path = ../Submodules/eDistantObject/Service/Sources/EDORuntimeUtils.h; sourceTree = "<group>"; };
-		B80EEAF72D9580D700C59DF9 /* EDOServiceError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOServiceError.h; path = ../Submodules/eDistantObject/Service/Sources/EDOServiceError.h; sourceTree = "<group>"; };
-		B80EEAF92D9580DD00C59DF9 /* EDOServiceException.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOServiceException.h; path = ../Submodules/eDistantObject/Service/Sources/EDOServiceException.h; sourceTree = "<group>"; };
-		B80EEAFB2D9580E200C59DF9 /* EDOServicePort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOServicePort.h; path = ../Submodules/eDistantObject/Service/Sources/EDOServicePort.h; sourceTree = "<group>"; };
-		B80EEAFD2D9580E500C59DF9 /* EDOServiceRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOServiceRequest.h; path = ../Submodules/eDistantObject/Service/Sources/EDOServiceRequest.h; sourceTree = "<group>"; };
-		B80EEAFF2D9580EA00C59DF9 /* EDOTimingFunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOTimingFunctions.h; path = ../Submodules/eDistantObject/Service/Sources/EDOTimingFunctions.h; sourceTree = "<group>"; };
-		B80EEB012D95815600C59DF9 /* EDOServiceRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOServiceRequest.h; path = ../Submodules/eDistantObject/Service/Sources/EDOServiceRequest.h; sourceTree = "<group>"; };
-		B80EEB022D95815C00C59DF9 /* EDOTimingFunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOTimingFunctions.h; path = ../Submodules/eDistantObject/Service/Sources/EDOTimingFunctions.h; sourceTree = "<group>"; };
-		B80EEB032D95816100C59DF9 /* EDOValueObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOValueObject.h; path = ../Submodules/eDistantObject/Service/Sources/EDOValueObject.h; sourceTree = "<group>"; };
-		B80EEB052D95816700C59DF9 /* EDOWeakObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOWeakObject.h; path = ../Submodules/eDistantObject/Service/Sources/EDOWeakObject.h; sourceTree = "<group>"; };
-		B80EEB072D95816F00C59DF9 /* NSKeyedArchiver+EDOAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSKeyedArchiver+EDOAdditions.h"; path = "../Submodules/eDistantObject/Service/Sources/NSKeyedArchiver+EDOAdditions.h"; sourceTree = "<group>"; };
-		B80EEB092D95817600C59DF9 /* NSKeyedUnarchiver+EDOAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSKeyedUnarchiver+EDOAdditions.h"; path = "../Submodules/eDistantObject/Service/Sources/NSKeyedUnarchiver+EDOAdditions.h"; sourceTree = "<group>"; };
-		B80EEB0B2D95818000C59DF9 /* NSKeyedUnarchiver+EDOAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSKeyedUnarchiver+EDOAdditions.h"; path = "../Submodules/eDistantObject/Service/Sources/NSKeyedUnarchiver+EDOAdditions.h"; sourceTree = "<group>"; };
-		B80EEB0C2D95818600C59DF9 /* NSObject+EDOBlockedType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSObject+EDOBlockedType.h"; path = "../Submodules/eDistantObject/Service/Sources/NSObject+EDOBlockedType.h"; sourceTree = "<group>"; };
-		B80EEB0E2D95818C00C59DF9 /* NSObject+EDOParameter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSObject+EDOParameter.h"; path = "../Submodules/eDistantObject/Service/Sources/NSObject+EDOParameter.h"; sourceTree = "<group>"; };
-		B80EEB102D95819300C59DF9 /* NSObject+EDOValue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSObject+EDOValue.h"; path = "../Submodules/eDistantObject/Service/Sources/NSObject+EDOValue.h"; sourceTree = "<group>"; };
-		B80EEB122D95819A00C59DF9 /* NSObject+EDOValueObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSObject+EDOValueObject.h"; path = "../Submodules/eDistantObject/Service/Sources/NSObject+EDOValueObject.h"; sourceTree = "<group>"; };
-		B80EEB142D95819E00C59DF9 /* NSObject+EDOWeakObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSObject+EDOWeakObject.h"; path = "../Submodules/eDistantObject/Service/Sources/NSObject+EDOWeakObject.h"; sourceTree = "<group>"; };
-		B80EEB162D9581A200C59DF9 /* NSProxy+EDOParameter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSProxy+EDOParameter.h"; path = "../Submodules/eDistantObject/Service/Sources/NSProxy+EDOParameter.h"; sourceTree = "<group>"; };
-		B80EEB192D9581DE00C59DF9 /* EDOBlockingQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOBlockingQueue.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOBlockingQueue.h; sourceTree = "<group>"; };
-		B80EEB1A2D9581E400C59DF9 /* EDOChannel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOChannel.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOChannel.h; sourceTree = "<group>"; };
-		B80EEB1B2D9581EA00C59DF9 /* EDOChannelErrors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOChannelErrors.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOChannelErrors.h; sourceTree = "<group>"; };
-		B80EEB1C2D9581F100C59DF9 /* EDOChannelForwarder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOChannelForwarder.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOChannelForwarder.h; sourceTree = "<group>"; };
-		B80EEB1D2D9581F500C59DF9 /* EDOChannelMultiplexer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOChannelMultiplexer.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOChannelMultiplexer.h; sourceTree = "<group>"; };
-		B80EEB1E2D9581F800C59DF9 /* EDOChannelPool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOChannelPool.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOChannelPool.h; sourceTree = "<group>"; };
-		B80EEB1F2D9581FB00C59DF9 /* EDOChannelUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOChannelUtil.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOChannelUtil.h; sourceTree = "<group>"; };
-		B80EEB202D9581FF00C59DF9 /* EDOHostPort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOHostPort.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOHostPort.h; sourceTree = "<group>"; };
-		B80EEB212D95820200C59DF9 /* EDOListenSocket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOListenSocket.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOListenSocket.h; sourceTree = "<group>"; };
-		B80EEB222D95820500C59DF9 /* EDOSocket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOSocket.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOSocket.h; sourceTree = "<group>"; };
-		B80EEB232D95820700C59DF9 /* EDOSocketChannel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOSocketChannel.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOSocketChannel.h; sourceTree = "<group>"; };
-		B80EEB242D95820B00C59DF9 /* EDOSocketPort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOSocketPort.h; path = ../Submodules/eDistantObject/Channel/Sources/EDOSocketPort.h; sourceTree = "<group>"; };
+		B80EEAA52D956E0D00C59DF9 /* EDODeviceChannel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDODeviceChannel.h; path = Submodules/eDistantObject/Device/Sources/EDODeviceChannel.h; sourceTree = "<group>"; };
+		B80EEAA72D956E1700C59DF9 /* EDODeviceConnector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDODeviceConnector.h; path = Submodules/eDistantObject/Device/Sources/EDODeviceConnector.h; sourceTree = "<group>"; };
+		B80EEAA92D956E2B00C59DF9 /* EDODeviceDetector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDODeviceDetector.h; path = Submodules/eDistantObject/Device/Sources/EDODeviceDetector.h; sourceTree = "<group>"; };
+		B80EEAAB2D956E3300C59DF9 /* EDOUSBMuxUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOUSBMuxUtil.h; path = Submodules/eDistantObject/Device/Sources/EDOUSBMuxUtil.h; sourceTree = "<group>"; };
+		B80EEAAD2D956E3D00C59DF9 /* EDONumericMeasure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDONumericMeasure.h; path = Submodules/eDistantObject/Measure/Sources/EDONumericMeasure.h; sourceTree = "<group>"; };
+		B80EEAAF2D956E4E00C59DF9 /* EDOChannel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOChannel.h; path = Submodules/eDistantObject/Channel/Sources/EDOChannel.h; sourceTree = "<group>"; };
+		B80EEAB12D956E5500C59DF9 /* EDOHostPort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOHostPort.h; path = Submodules/eDistantObject/Channel/Sources/EDOHostPort.h; sourceTree = "<group>"; };
+		B80EEAB32D957F6000C59DF9 /* EDOBlockingQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOBlockingQueue.h; path = Submodules/eDistantObject/Channel/Sources/EDOBlockingQueue.h; sourceTree = "<group>"; };
+		B80EEAB52D957F6800C59DF9 /* EDOChannel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOChannel.h; path = Submodules/eDistantObject/Channel/Sources/EDOChannel.h; sourceTree = "<group>"; };
+		B80EEAB62D957F7000C59DF9 /* EDOChannelErrors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOChannelErrors.h; path = Submodules/eDistantObject/Channel/Sources/EDOChannelErrors.h; sourceTree = "<group>"; };
+		B80EEAB82D957F7600C59DF9 /* EDOChannelForwarder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOChannelForwarder.h; path = Submodules/eDistantObject/Channel/Sources/EDOChannelForwarder.h; sourceTree = "<group>"; };
+		B80EEABA2D957F7C00C59DF9 /* EDOChannelMultiplexer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOChannelMultiplexer.h; path = Submodules/eDistantObject/Channel/Sources/EDOChannelMultiplexer.h; sourceTree = "<group>"; };
+		B80EEABC2D957F8200C59DF9 /* EDOChannelPool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOChannelPool.h; path = Submodules/eDistantObject/Channel/Sources/EDOChannelPool.h; sourceTree = "<group>"; };
+		B80EEABE2D957F8600C59DF9 /* EDOChannelUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOChannelUtil.h; path = Submodules/eDistantObject/Channel/Sources/EDOChannelUtil.h; sourceTree = "<group>"; };
+		B80EEAC02D957F8B00C59DF9 /* EDOHostPort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOHostPort.h; path = Submodules/eDistantObject/Channel/Sources/EDOHostPort.h; sourceTree = "<group>"; };
+		B80EEAC12D957F9100C59DF9 /* EDOListenSocket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOListenSocket.h; path = Submodules/eDistantObject/Channel/Sources/EDOListenSocket.h; sourceTree = "<group>"; };
+		B80EEAC32D957F9600C59DF9 /* EDOSocket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOSocket.h; path = Submodules/eDistantObject/Channel/Sources/EDOSocket.h; sourceTree = "<group>"; };
+		B80EEAC52D957F9B00C59DF9 /* EDOSocketChannel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOSocketChannel.h; path = Submodules/eDistantObject/Channel/Sources/EDOSocketChannel.h; sourceTree = "<group>"; };
+		B80EEAC72D957F9F00C59DF9 /* EDOSocketPort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOSocketPort.h; path = Submodules/eDistantObject/Channel/Sources/EDOSocketPort.h; sourceTree = "<group>"; };
+		B80EEAC92D957FE200C59DF9 /* EDOBlockObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOBlockObject.h; path = Submodules/eDistantObject/Service/Sources/EDOBlockObject.h; sourceTree = "<group>"; };
+		B80EEACB2D957FFB00C59DF9 /* EDOClassMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOClassMessage.h; path = Submodules/eDistantObject/Service/Sources/EDOClassMessage.h; sourceTree = "<group>"; };
+		B80EEACD2D95800200C59DF9 /* EDOClientService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOClientService.h; path = Submodules/eDistantObject/Service/Sources/EDOClientService.h; sourceTree = "<group>"; };
+		B80EEACF2D95800A00C59DF9 /* EDOClientServiceStatsCollector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOClientServiceStatsCollector.h; path = Submodules/eDistantObject/Service/Sources/EDOClientServiceStatsCollector.h; sourceTree = "<group>"; };
+		B80EEAD12D95801300C59DF9 /* EDODeallocationTracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDODeallocationTracker.h; path = Submodules/eDistantObject/Service/Sources/EDODeallocationTracker.h; sourceTree = "<group>"; };
+		B80EEAD32D95801700C59DF9 /* EDOExecutor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOExecutor.h; path = Submodules/eDistantObject/Service/Sources/EDOExecutor.h; sourceTree = "<group>"; };
+		B80EEAD52D95803E00C59DF9 /* EDOExecutorMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOExecutorMessage.h; path = Submodules/eDistantObject/Service/Sources/EDOExecutorMessage.h; sourceTree = "<group>"; };
+		B80EEAD72D95804B00C59DF9 /* EDOHostNamingService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOHostNamingService.h; path = Submodules/eDistantObject/Service/Sources/EDOHostNamingService.h; sourceTree = "<group>"; };
+		B80EEAD92D95805100C59DF9 /* EDOHostService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOHostService.h; path = Submodules/eDistantObject/Service/Sources/EDOHostService.h; sourceTree = "<group>"; };
+		B80EEADB2D95805500C59DF9 /* EDOHostService+Handlers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "EDOHostService+Handlers.h"; path = "Submodules/eDistantObject/Service/Sources/EDOHostService+Handlers.h"; sourceTree = "<group>"; };
+		B80EEADD2D95805900C59DF9 /* EDOInvocationMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOInvocationMessage.h; path = Submodules/eDistantObject/Service/Sources/EDOInvocationMessage.h; sourceTree = "<group>"; };
+		B80EEADF2D95805D00C59DF9 /* EDOMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOMessage.h; path = Submodules/eDistantObject/Service/Sources/EDOMessage.h; sourceTree = "<group>"; };
+		B80EEAE12D95806000C59DF9 /* EDOMethodSignatureMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOMethodSignatureMessage.h; path = Submodules/eDistantObject/Service/Sources/EDOMethodSignatureMessage.h; sourceTree = "<group>"; };
+		B80EEAE32D95806200C59DF9 /* EDOObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOObject.h; path = Submodules/eDistantObject/Service/Sources/EDOObject.h; sourceTree = "<group>"; };
+		B80EEAE52D95806800C59DF9 /* EDOObjectAliveMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOObjectAliveMessage.h; path = Submodules/eDistantObject/Service/Sources/EDOObjectAliveMessage.h; sourceTree = "<group>"; };
+		B80EEAE72D95806D00C59DF9 /* EDOObjectMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOObjectMessage.h; path = Submodules/eDistantObject/Service/Sources/EDOObjectMessage.h; sourceTree = "<group>"; };
+		B80EEAE92D95806F00C59DF9 /* EDOObjectReleaseMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOObjectReleaseMessage.h; path = Submodules/eDistantObject/Service/Sources/EDOObjectReleaseMessage.h; sourceTree = "<group>"; };
+		B80EEAEB2D95807200C59DF9 /* EDOParameter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOParameter.h; path = Submodules/eDistantObject/Service/Sources/EDOParameter.h; sourceTree = "<group>"; };
+		B80EEAED2D95807600C59DF9 /* EDOProtocolObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOProtocolObject.h; path = Submodules/eDistantObject/Service/Sources/EDOProtocolObject.h; sourceTree = "<group>"; };
+		B80EEAEF2D95807B00C59DF9 /* EDORemoteException.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDORemoteException.h; path = Submodules/eDistantObject/Service/Sources/EDORemoteException.h; sourceTree = "<group>"; };
+		B80EEAF12D95807E00C59DF9 /* EDORemoteVariable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDORemoteVariable.h; path = Submodules/eDistantObject/Service/Sources/EDORemoteVariable.h; sourceTree = "<group>"; };
+		B80EEAF32D95808200C59DF9 /* EDORuntimeUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDORuntimeUtils.h; path = Submodules/eDistantObject/Service/Sources/EDORuntimeUtils.h; sourceTree = "<group>"; };
+		B80EEAF52D9580BE00C59DF9 /* EDORemoteException.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDORemoteException.h; path = Submodules/eDistantObject/Service/Sources/EDORemoteException.h; sourceTree = "<group>"; };
+		B80EEAF62D9580C300C59DF9 /* EDORuntimeUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDORuntimeUtils.h; path = Submodules/eDistantObject/Service/Sources/EDORuntimeUtils.h; sourceTree = "<group>"; };
+		B80EEAF72D9580D700C59DF9 /* EDOServiceError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOServiceError.h; path = Submodules/eDistantObject/Service/Sources/EDOServiceError.h; sourceTree = "<group>"; };
+		B80EEAF92D9580DD00C59DF9 /* EDOServiceException.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOServiceException.h; path = Submodules/eDistantObject/Service/Sources/EDOServiceException.h; sourceTree = "<group>"; };
+		B80EEAFB2D9580E200C59DF9 /* EDOServicePort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOServicePort.h; path = Submodules/eDistantObject/Service/Sources/EDOServicePort.h; sourceTree = "<group>"; };
+		B80EEAFD2D9580E500C59DF9 /* EDOServiceRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOServiceRequest.h; path = Submodules/eDistantObject/Service/Sources/EDOServiceRequest.h; sourceTree = "<group>"; };
+		B80EEAFF2D9580EA00C59DF9 /* EDOTimingFunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOTimingFunctions.h; path = Submodules/eDistantObject/Service/Sources/EDOTimingFunctions.h; sourceTree = "<group>"; };
+		B80EEB012D95815600C59DF9 /* EDOServiceRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOServiceRequest.h; path = Submodules/eDistantObject/Service/Sources/EDOServiceRequest.h; sourceTree = "<group>"; };
+		B80EEB022D95815C00C59DF9 /* EDOTimingFunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOTimingFunctions.h; path = Submodules/eDistantObject/Service/Sources/EDOTimingFunctions.h; sourceTree = "<group>"; };
+		B80EEB032D95816100C59DF9 /* EDOValueObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOValueObject.h; path = Submodules/eDistantObject/Service/Sources/EDOValueObject.h; sourceTree = "<group>"; };
+		B80EEB052D95816700C59DF9 /* EDOWeakObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOWeakObject.h; path = Submodules/eDistantObject/Service/Sources/EDOWeakObject.h; sourceTree = "<group>"; };
+		B80EEB072D95816F00C59DF9 /* NSKeyedArchiver+EDOAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSKeyedArchiver+EDOAdditions.h"; path = "Submodules/eDistantObject/Service/Sources/NSKeyedArchiver+EDOAdditions.h"; sourceTree = "<group>"; };
+		B80EEB092D95817600C59DF9 /* NSKeyedUnarchiver+EDOAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSKeyedUnarchiver+EDOAdditions.h"; path = "Submodules/eDistantObject/Service/Sources/NSKeyedUnarchiver+EDOAdditions.h"; sourceTree = "<group>"; };
+		B80EEB0B2D95818000C59DF9 /* NSKeyedUnarchiver+EDOAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSKeyedUnarchiver+EDOAdditions.h"; path = "Submodules/eDistantObject/Service/Sources/NSKeyedUnarchiver+EDOAdditions.h"; sourceTree = "<group>"; };
+		B80EEB0C2D95818600C59DF9 /* NSObject+EDOBlockedType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSObject+EDOBlockedType.h"; path = "Submodules/eDistantObject/Service/Sources/NSObject+EDOBlockedType.h"; sourceTree = "<group>"; };
+		B80EEB0E2D95818C00C59DF9 /* NSObject+EDOParameter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSObject+EDOParameter.h"; path = "Submodules/eDistantObject/Service/Sources/NSObject+EDOParameter.h"; sourceTree = "<group>"; };
+		B80EEB102D95819300C59DF9 /* NSObject+EDOValue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSObject+EDOValue.h"; path = "Submodules/eDistantObject/Service/Sources/NSObject+EDOValue.h"; sourceTree = "<group>"; };
+		B80EEB122D95819A00C59DF9 /* NSObject+EDOValueObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSObject+EDOValueObject.h"; path = "Submodules/eDistantObject/Service/Sources/NSObject+EDOValueObject.h"; sourceTree = "<group>"; };
+		B80EEB142D95819E00C59DF9 /* NSObject+EDOWeakObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSObject+EDOWeakObject.h"; path = "Submodules/eDistantObject/Service/Sources/NSObject+EDOWeakObject.h"; sourceTree = "<group>"; };
+		B80EEB162D9581A200C59DF9 /* NSProxy+EDOParameter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSProxy+EDOParameter.h"; path = "Submodules/eDistantObject/Service/Sources/NSProxy+EDOParameter.h"; sourceTree = "<group>"; };
+		B80EEB192D9581DE00C59DF9 /* EDOBlockingQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOBlockingQueue.h; path = Submodules/eDistantObject/Channel/Sources/EDOBlockingQueue.h; sourceTree = "<group>"; };
+		B80EEB1A2D9581E400C59DF9 /* EDOChannel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOChannel.h; path = Submodules/eDistantObject/Channel/Sources/EDOChannel.h; sourceTree = "<group>"; };
+		B80EEB1B2D9581EA00C59DF9 /* EDOChannelErrors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOChannelErrors.h; path = Submodules/eDistantObject/Channel/Sources/EDOChannelErrors.h; sourceTree = "<group>"; };
+		B80EEB1C2D9581F100C59DF9 /* EDOChannelForwarder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOChannelForwarder.h; path = Submodules/eDistantObject/Channel/Sources/EDOChannelForwarder.h; sourceTree = "<group>"; };
+		B80EEB1D2D9581F500C59DF9 /* EDOChannelMultiplexer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOChannelMultiplexer.h; path = Submodules/eDistantObject/Channel/Sources/EDOChannelMultiplexer.h; sourceTree = "<group>"; };
+		B80EEB1E2D9581F800C59DF9 /* EDOChannelPool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOChannelPool.h; path = Submodules/eDistantObject/Channel/Sources/EDOChannelPool.h; sourceTree = "<group>"; };
+		B80EEB1F2D9581FB00C59DF9 /* EDOChannelUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOChannelUtil.h; path = Submodules/eDistantObject/Channel/Sources/EDOChannelUtil.h; sourceTree = "<group>"; };
+		B80EEB202D9581FF00C59DF9 /* EDOHostPort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOHostPort.h; path = Submodules/eDistantObject/Channel/Sources/EDOHostPort.h; sourceTree = "<group>"; };
+		B80EEB212D95820200C59DF9 /* EDOListenSocket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOListenSocket.h; path = Submodules/eDistantObject/Channel/Sources/EDOListenSocket.h; sourceTree = "<group>"; };
+		B80EEB222D95820500C59DF9 /* EDOSocket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOSocket.h; path = Submodules/eDistantObject/Channel/Sources/EDOSocket.h; sourceTree = "<group>"; };
+		B80EEB232D95820700C59DF9 /* EDOSocketChannel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOSocketChannel.h; path = Submodules/eDistantObject/Channel/Sources/EDOSocketChannel.h; sourceTree = "<group>"; };
+		B80EEB242D95820B00C59DF9 /* EDOSocketPort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDOSocketPort.h; path = Submodules/eDistantObject/Channel/Sources/EDOSocketPort.h; sourceTree = "<group>"; };
 		FD1184CB212CEE72004CADC3 /* XCUIApplication+GREYEnvironment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "XCUIApplication+GREYEnvironment.h"; path = "XCTestCase/XCUIApplication+GREYEnvironment.h"; sourceTree = "<group>"; };
 		FD1184D2212CEE72004CADC3 /* XCUIApplication+GREYEnvironment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "XCUIApplication+GREYEnvironment.m"; path = "XCTestCase/XCUIApplication+GREYEnvironment.m"; sourceTree = "<group>"; };
 		FD1575512579CC7B00EDBF48 /* GREYDefaultFailureHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GREYDefaultFailureHandler.h; path = FailureHandler/GREYDefaultFailureHandler.h; sourceTree = "<group>"; };
@@ -1025,86 +1025,6 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
-		B80EEB182D9581C400C59DF9 /* PublicHeaders */ = {
-			isa = PBXGroup;
-			children = (
-				B80EEB162D9581A200C59DF9 /* NSProxy+EDOParameter.h */,
-				B80EEB142D95819E00C59DF9 /* NSObject+EDOWeakObject.h */,
-				B80EEB122D95819A00C59DF9 /* NSObject+EDOValueObject.h */,
-				B80EEB102D95819300C59DF9 /* NSObject+EDOValue.h */,
-				B80EEB0E2D95818C00C59DF9 /* NSObject+EDOParameter.h */,
-				B80EEB0C2D95818600C59DF9 /* NSObject+EDOBlockedType.h */,
-				B80EEB092D95817600C59DF9 /* NSKeyedUnarchiver+EDOAdditions.h */,
-				B80EEB0B2D95818000C59DF9 /* NSKeyedUnarchiver+EDOAdditions.h */,
-				B80EEB072D95816F00C59DF9 /* NSKeyedArchiver+EDOAdditions.h */,
-				B80EEB052D95816700C59DF9 /* EDOWeakObject.h */,
-				B80EEB032D95816100C59DF9 /* EDOValueObject.h */,
-				B80EEB022D95815C00C59DF9 /* EDOTimingFunctions.h */,
-				B80EEB012D95815600C59DF9 /* EDOServiceRequest.h */,
-				B80EEAFF2D9580EA00C59DF9 /* EDOTimingFunctions.h */,
-				B80EEAFD2D9580E500C59DF9 /* EDOServiceRequest.h */,
-				B80EEAFB2D9580E200C59DF9 /* EDOServicePort.h */,
-				B80EEAF92D9580DD00C59DF9 /* EDOServiceException.h */,
-				B80EEAF72D9580D700C59DF9 /* EDOServiceError.h */,
-				B80EEAF62D9580C300C59DF9 /* EDORuntimeUtils.h */,
-				B80EEAF52D9580BE00C59DF9 /* EDORemoteException.h */,
-				B80EEAF32D95808200C59DF9 /* EDORuntimeUtils.h */,
-				B80EEAF12D95807E00C59DF9 /* EDORemoteVariable.h */,
-				B80EEAEF2D95807B00C59DF9 /* EDORemoteException.h */,
-				B80EEAED2D95807600C59DF9 /* EDOProtocolObject.h */,
-				B80EEAEB2D95807200C59DF9 /* EDOParameter.h */,
-				B80EEAE92D95806F00C59DF9 /* EDOObjectReleaseMessage.h */,
-				B80EEAE72D95806D00C59DF9 /* EDOObjectMessage.h */,
-				B80EEAE52D95806800C59DF9 /* EDOObjectAliveMessage.h */,
-				B80EEAE32D95806200C59DF9 /* EDOObject.h */,
-				B80EEAE12D95806000C59DF9 /* EDOMethodSignatureMessage.h */,
-				B80EEADF2D95805D00C59DF9 /* EDOMessage.h */,
-				B80EEADD2D95805900C59DF9 /* EDOInvocationMessage.h */,
-				B80EEADB2D95805500C59DF9 /* EDOHostService+Handlers.h */,
-				B80EEAD92D95805100C59DF9 /* EDOHostService.h */,
-				B80EEAD72D95804B00C59DF9 /* EDOHostNamingService.h */,
-				B80EEAD52D95803E00C59DF9 /* EDOExecutorMessage.h */,
-				B80EEAD32D95801700C59DF9 /* EDOExecutor.h */,
-				B80EEAD12D95801300C59DF9 /* EDODeallocationTracker.h */,
-				B80EEACF2D95800A00C59DF9 /* EDOClientServiceStatsCollector.h */,
-				B80EEACD2D95800200C59DF9 /* EDOClientService.h */,
-				B80EEACB2D957FFB00C59DF9 /* EDOClassMessage.h */,
-				B80EEAC92D957FE200C59DF9 /* EDOBlockObject.h */,
-				B80EEAC72D957F9F00C59DF9 /* EDOSocketPort.h */,
-				B80EEAC52D957F9B00C59DF9 /* EDOSocketChannel.h */,
-				B80EEAC32D957F9600C59DF9 /* EDOSocket.h */,
-				B80EEAC12D957F9100C59DF9 /* EDOListenSocket.h */,
-				B80EEAC02D957F8B00C59DF9 /* EDOHostPort.h */,
-				B80EEABE2D957F8600C59DF9 /* EDOChannelUtil.h */,
-				B80EEABC2D957F8200C59DF9 /* EDOChannelPool.h */,
-				B80EEABA2D957F7C00C59DF9 /* EDOChannelMultiplexer.h */,
-				B80EEAB82D957F7600C59DF9 /* EDOChannelForwarder.h */,
-				B80EEAB62D957F7000C59DF9 /* EDOChannelErrors.h */,
-				B80EEAB52D957F6800C59DF9 /* EDOChannel.h */,
-				B80EEAB32D957F6000C59DF9 /* EDOBlockingQueue.h */,
-				B80EEAB12D956E5500C59DF9 /* EDOHostPort.h */,
-				B80EEAAF2D956E4E00C59DF9 /* EDOChannel.h */,
-				B80EEAAD2D956E3D00C59DF9 /* EDONumericMeasure.h */,
-				B80EEAAB2D956E3300C59DF9 /* EDOUSBMuxUtil.h */,
-				B80EEAA92D956E2B00C59DF9 /* EDODeviceDetector.h */,
-				B80EEAA72D956E1700C59DF9 /* EDODeviceConnector.h */,
-				B80EEAA52D956E0D00C59DF9 /* EDODeviceChannel.h */,
-				B80EEB242D95820B00C59DF9 /* EDOSocketPort.h */,
-				B80EEB232D95820700C59DF9 /* EDOSocketChannel.h */,
-				B80EEB222D95820500C59DF9 /* EDOSocket.h */,
-				B80EEB212D95820200C59DF9 /* EDOListenSocket.h */,
-				B80EEB202D9581FF00C59DF9 /* EDOHostPort.h */,
-				B80EEB1F2D9581FB00C59DF9 /* EDOChannelUtil.h */,
-				B80EEB1E2D9581F800C59DF9 /* EDOChannelPool.h */,
-				B80EEB1D2D9581F500C59DF9 /* EDOChannelMultiplexer.h */,
-				B80EEB1C2D9581F100C59DF9 /* EDOChannelForwarder.h */,
-				B80EEB1B2D9581EA00C59DF9 /* EDOChannelErrors.h */,
-				B80EEB1A2D9581E400C59DF9 /* EDOChannel.h */,
-				B80EEB192D9581DE00C59DF9 /* EDOBlockingQueue.h */,
-			);
-			path = PublicHeaders;
-			sourceTree = "<group>";
-		};
 		FD15754F2579CC4600EDBF48 /* FailureHandler */ = {
 			isa = PBXGroup;
 			children = (
@@ -1270,7 +1190,6 @@
 		FD62390820F569D500049E81 = {
 			isa = PBXGroup;
 			children = (
-				B80EEB182D9581C400C59DF9 /* PublicHeaders */,
 				FD27E00A26FBB5AC0074018B /* third_party */,
 				FD6239E420F56E6A00049E81 /* eDistantObject.xcodeproj */,
 				FD62399020F56B7D00049E81 /* CommonLib */,
